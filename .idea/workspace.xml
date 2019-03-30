@@ -1,0 +1,388 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="f5c272dc-f890-4f38-9e78-366c9498b59c" name="Default Changelist" comment="" />
+    <ignored path="$PROJECT_DIR$/out/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DepsLocalSettings">
+    <option name="availableProjects">
+      <map>
+        <entry>
+          <key>
+            <ExternalProjectPojo>
+              <option name="name" value="hpl-util" />
+              <option name="path" value="$PROJECT_DIR$" />
+            </ExternalProjectPojo>
+          </key>
+          <value>
+            <list>
+              <ExternalProjectPojo>
+                <option name="name" value="hpl-util" />
+                <option name="path" value="C:\Users\pielkelh\Drive\projects\hpl-util" />
+              </ExternalProjectPojo>
+            </list>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="modificationStamps">
+      <map>
+        <entry key="$PROJECT_DIR$" value="1553216210370" />
+        <entry key="$PROJECT_DIR$/deps.edn" value="3351829987" />
+      </map>
+    </option>
+    <option name="projectSyncType">
+      <map>
+        <entry key="$PROJECT_DIR$" value="RE_IMPORT" />
+      </map>
+    </option>
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="CLOJURE_DEPS">
+      <state>
+        <task path="C:\Users\pielkelh\Drive\projects\hpl-util">
+          <activation />
+        </task>
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="hpl-util" type="f1a62948:ProjectNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="hpl-util" type="f1a62948:ProjectNode" />
+                <item name="Aliases" type="d57c182a:AliasesNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="hpl-util" type="f1a62948:ProjectNode" />
+                <item name="hpl-util" type="2d1252cf:ModuleNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="hpl-util" type="f1a62948:ProjectNode" />
+                <item name="hpl-util" type="2d1252cf:ModuleNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="hpl-util" type="f1a62948:ProjectNode" />
+                <item name="hpl-util" type="2d1252cf:ModuleNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="other" type="c8890929:TasksNode$1" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="jar://$MAVEN_REPOSITORY$/org/clojure/clojure/1.10.0/clojure-1.10.0.jar!/clojure/core.clj">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="158800">
+              <caret line="6352" column="8" selection-start-line="6352" selection-start-column="6" selection-end-line="6356" selection-end-column="15" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/deps.edn">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="100">
+              <caret line="4" column="9" lean-forward="true" selection-start-line="4" selection-start-column="7" selection-end-line="13" selection-end-column="52" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/math.clj">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="208">
+              <caret line="68" column="31" lean-forward="true" selection-start-line="68" selection-start-column="31" selection-end-line="68" selection-end-column="31" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/script.clj">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="50">
+              <caret line="2" selection-start-line="2" selection-end-line="2" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Clojure Namespace" />
+      </list>
+    </option>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/src/script.clj" />
+        <option value="$PROJECT_DIR$/deps.edn" />
+        <option value="$PROJECT_DIR$/src/math.clj" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1539" />
+    <option name="height" value="785" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="cursive.last.file.extension.C\:/Users/pielkelh/Drive/projects/hpl-util/src" value="clj" />
+    <property name="last_opened_file_path" value="D:/visualvm_141/bin/visualvm.exe" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+  </component>
+  <component name="ReplState" timestamp="1553229645223">{:repl-history {:ide [], :local [{:command &quot;(ns script)&quot;, :offset 11, :ns &quot;user&quot;} {:command &quot;{:a \&quot;h\&quot;}&quot;, :offset 8, :ns &quot;script&quot;} {:command &quot;(ns math\n  (require [taoensso.timbre :as timbre]))&quot;, :offset 50, :ns &quot;user&quot;} {:command &quot;(ns math\n  (:require [taoensso.timbre :as t]))&quot;, :offset 46, :ns &quot;user&quot;} {:command &quot;(defn find-longest-digit-multiplication-expansion\n  [x]\n  (loop [step 0\n         x x]\n    (if (= 1 (count (str x)))\n      step\n      (t/info step))))&quot;, :offset 149, :ns &quot;math&quot;} {:command &quot;(defn digits\n  \&quot;Returns the digits of a number\&quot;\n  [x]\n  (map #(Character/getNumericValue ^Character %) (str x)))&quot;, :offset 112, :ns &quot;math&quot;} {:command &quot;(digits 29)&quot;, :offset 11, :ns &quot;math&quot;} {:command &quot;(digits 1023959453867)&quot;, :offset 22, :ns &quot;math&quot;} {:command &quot;(defn find-longest-digit-multiplication-expansion\n  [x]\n  (loop [step 0\n         x x]\n    (t/info step)\n    (if (= 1 (count (digits x)))\n      step\n      (recur (reduce * (digits x))))))&quot;, :offset 186, :ns &quot;math&quot;} {:command &quot;(defn find-longest-digit-multiplication-expansion\n  [x]\n  (loop [step 0\n         x x]\n    (t/info step)\n    (if (= 1 (count (digits x)))\n      step\n      (recur (reduce * (digits x)) (inc step)))))&quot;, :offset 197, :ns &quot;math&quot;} {:command &quot;(defn find-longest-digit-multiplication-expansion\n  [x]\n  (loop [step 0\n         x x]\n    (t/info step)\n    (if (= 1 (count (digits x)))\n      step\n      (recur (inc step) (reduce * (digits x))))))&quot;, :offset 197, :ns &quot;math&quot;} {:command &quot;(defn find-longest-digit-multiplication-expansion\n  [x]\n  (loop [step 0\n         x x]\n    (t/info \&quot;Steps:\&quot; step)\n    (if (= 1 (count (digits x)))\n      step\n      (recur (inc step) (reduce * (digits x))))))&quot;, :offset 206, :ns &quot;math&quot;} {:command &quot;(find-longest-digit-multiplication-expansion 325)&quot;, :offset 49, :ns &quot;math&quot;} {:command &quot;(find-longest-digit-multiplication-expansion 277777788888899)&quot;, :offset 61, :ns &quot;math&quot;} {:command &quot;(ns math\n  (:require [taoensso.timbre :as t]\n            [clojure.math.combinatorics :as combo]))&quot;, :offset 97, :ns &quot;user&quot;} {:command &quot;{:deps {}\n :aliases\n       {:rebl {:extra-deps {\n                            org.clojure/clojure         {:mvn/version \&quot;1.10.0\&quot;}\n                            org.clojure/core.async      {:mvn/version \&quot;0.4.490\&quot;}\n                            com.cognitect/rebl          {:mvn/version \&quot;0.9.149\&quot;}\n                            org.openjfx/javafx-fxml     {:mvn/version \&quot;11.0.1\&quot;}\n                            org.openjfx/javafx-controls {:mvn/version \&quot;11.0.1\&quot;}\n                            org.openjfx/javafx-swing    {:mvn/version \&quot;11.0.1\&quot;}\n                            org.openjfx/javafx-base     {:mvn/version \&quot;11.0.1\&quot;}\n                            org.openjfx/javafx-web      {:mvn/version \&quot;11.0.1\&quot;}\n                            com.taoensso/timbre         {:mvn/version \&quot;4.10.0\&quot;}\n                            org.clojure/math.combinatorics {:mvn/version \&quot;0.1.4\&quot;}}\n               :main-opts  [\&quot;-m\&quot; \&quot;cognitect.rebl\&quot;]}}}&quot;, :offset 907, :ns &quot;user&quot;} {:command &quot;(take 10 (constantly 4))&quot;, :offset 24, :ns &quot;user&quot;} {:command &quot;(constantly 6)&quot;, :offset 14, :ns &quot;user&quot;} {:command &quot;(defn find-longest-digit-multiplication-expansion\n  \&quot;Finds the shortest whole number whose digits, can be iteratively multiplied\n  the most times. Current record holder is 277777788888899 with 11 digits.\&quot;\n  [num-combs-to-try]\n  (let [longest (atom [0 0])]\n    (map\n      (fn [use2?]\n        (map\n          (fn [use3?]\n            (map\n              (fn [use4?]\n                (map\n                  (fn [use5?]\n                    (map\n                      (fn [num6]\n                        (map\n                          (fn [num7]\n                            (map\n                              (fn [num8]\n                                (map\n                                  (fn [num9]\n                                    (let [x (cond-&gt; []\n                                                    use2? (conj 2)\n                                                    (and use3? (not use2?)) (conj 3)\n                                                    use4? (conj 4)\n                                                    (and use5? (not use2?)) (conj 5))\n                                          x (lazy-cat x\n                                                      (repeat num6 6)\n                                                      (repeat num7 7)\n                                                      (repeat num8 8)\n                                                      (repeat num9 9))\n                                          steps (check-longest-digit-multiplication-expansion x)]\n                                      (when (&lt; (second @longest) steps)\n                                        (reset! longest [x steps]))))\n                                  (range num-combs-to-try))\n                                (range num-combs-to-try)))\n                            (range num-combs-to-try)))\n                        (range num-combs-to-try)))\n                    [true false]))\n                [true false]))\n            [true false]))\n        [true false]))))&quot;, :offset 1971, :ns &quot;math&quot;} {:command &quot;(check-longest-digit-multiplication-expansion 1)&quot;, :offset 48, :ns &quot;math&quot;} {:command &quot;(defn find-longest-digit-multiplication-expansion\n  \&quot;Finds the shortest whole number whose digits, can be iteratively multiplied\n  the most times. Current record holder is 277777788888899 with 11 digits.\&quot;\n  [num-combs-to-try]\n  (let [longest (atom [0 0])]\n    (map\n      (fn [use2?]\n        (map\n          (fn [use3?]\n            (map\n              (fn [use4?]\n                (map\n                  (fn [use5?]\n                    (map\n                      (fn [num6]\n                        (map\n                          (fn [num7]\n                            (map\n                              (fn [num8]\n                                (map\n                                  (fn [num9]\n                                    (let [x (cond-&gt; []\n                                                    use2? (conj 2)\n                                                    (and use3? (not use2?)) (conj 3)\n                                                    use4? (conj 4)\n                                                    (and use5? (not use2?)) (conj 5))\n                                          x (lazy-cat x\n                                                      (repeat num6 6)\n                                                      (repeat num7 7)\n                                                      (repeat num8 8)\n                                                      (repeat num9 9))\n                                          steps (check-longest-digit-multiplication-expansion x)]\n                                      (when (&lt; (second @longest) steps)\n                                        (reset! longest [x steps]))))\n                                  (range num-combs-to-try))\n                                (range num-combs-to-try)))\n                            (range num-combs-to-try)))\n                        (range num-combs-to-try)))\n                    [true false]))\n                [true false]))\n            [true false]))\n        [true false]))\n    @longest))&quot;, :offset 1984, :ns &quot;math&quot;} {:command &quot;(check-longest-digit-multiplication-expansion 3)&quot;, :offset 48, :ns &quot;math&quot;} {:command &quot;(defn find-longest-digit-multiplication-expansion\n  \&quot;Finds the shortest whole number whose digits, can be iteratively multiplied\n  the most times. Current record holder is 277777788888899 with 11 digits.\&quot;\n  [num-combs-to-try]\n  (let [longest (atom [0 0])]\n    (doall\n      (map\n        (fn [use2?]\n          (map\n            (fn [use3?]\n              (map\n                (fn [use4?]\n                  (map\n                    (fn [use5?]\n                      (map\n                        (fn [num6]\n                          (map\n                            (fn [num7]\n                              (map\n                                (fn [num8]\n                                  (map\n                                    (fn [num9]\n                                      (let [x (cond-&gt; []\n                                                      use2? (conj 2)\n                                                      (and use3? (not use2?)) (conj 3)\n                                                      use4? (conj 4)\n                                                      (and use5? (not use2?)) (conj 5))\n                                            x (lazy-cat x\n                                                        (repeat num6 6)\n                                                        (repeat num7 7)\n                                                        (repeat num8 8)\n                                                        (repeat num9 9))\n                                            steps (check-longest-digit-multiplication-expansion x)]\n                                        (when (&lt; (second @longest) steps)\n                                          (reset! longest [x steps]))))\n                                    (range num-combs-to-try))\n                                  (range num-combs-to-try)))\n                              (range num-combs-to-try)))\n                          (range num-combs-to-try)))\n                      [true false]))\n                  [true false]))\n              [true false]))\n          [true false])))\n    @longest))&quot;, :offset 2070, :ns &quot;math&quot;} {:command &quot;*e&quot;, :offset 2, :ns &quot;user&quot;} {:command &quot;(lazy-cat [1 2] (repeat 8 3))&quot;, :offset 29, :ns &quot;user&quot;} {:command &quot;-&quot;, :offset 1, :ns &quot;math&quot;} {:command &quot;(defn find-longest-digit-multiplication-expansion\n  \&quot;Finds the shortest whole number whose digits, can be iteratively multiplied\n  the most times. Current record holder is 277777788888899 with 11 digits.\&quot;\n  [num-combs-to-try]\n  (let [longest (atom [0 0])]\n    (doall\n      (map (fn [use2?] (map (fn [use3?] (map (fn [use4?] (map (fn [use5?] (map (fn [num6] (map (fn [num7] (map (fn [num8] (map (fn [num9] (evaluate-num longest use2? use3? use4? use5? num6 num7 num8 num9))\n                                                                                                                               (range num-combs-to-try)))\n                                                                                                               (range num-combs-to-try)))\n                                                                                               (range num-combs-to-try)))\n                                                                               (range num-combs-to-try)))\n                                                              [true false]))\n                                             [true false]))\n                            [true false]))\n           [true false]))\n    @longest))&quot;, :offset 1213, :ns &quot;math&quot;} {:command &quot;(defn find-longest-digit-multiplication-expansion\n  \&quot;Finds the shortest whole number whose digits, can be iteratively multiplied\n  the most times. Current record holder is 277777788888899 with 11 digits.\&quot;\n  [num-combs-to-try]\n  (let [longest (atom [0 0])]\n    (print (map (fn [use2?]\n                  (map (fn [use3?]\n                         (map (fn [use4?]\n                                (map (fn [use5?]\n                                       (map (fn [num6]\n                                              (map (fn [num7]\n                                                     (map (fn [num8]\n                                                            (map (fn [num9] (evaluate-num longest use2? use3? use4? use5? num6 num7 num8 num9))\n                                                                 (range num-combs-to-try)))\n                                                          (range num-combs-to-try)))\n                                                   (range num-combs-to-try)))\n                                            (range num-combs-to-try)))\n                                     [true false]))\n                              [true false]))\n                       [true false]))\n                [true false]))\n    @longest))&quot;, :offset 1246, :ns &quot;math&quot;} {:command &quot;(t/set-level! :debug)&quot;, :offset 21, :ns &quot;math&quot;} {:command &quot;(find-longest-digit-multiplication-expansion 3)&quot;, :offset 47, :ns &quot;math&quot;} {:command &quot;(defn make-num\n  [use2? use3? use4? use5? num6 num7 num8 num9]\n  (-&gt; (list)\n      (cond-&gt;\n        use2? (conj 2)\n        (and use3? (not use2?)) (conj 3)\n        use4? (conj 4)\n        (and use5? (not use2?)) (conj 5))\n      (lazy-cat\n        (repeat num6 6)\n        (repeat num7 7)\n        (repeat num8 8)\n        (repeat num9 9))))&quot;, :offset 333, :ns &quot;math&quot;} {:command &quot;(Integer/MAX_VALUE)&quot;, :offset 19, :ns &quot;math&quot;} {:command &quot;(defn evaluate-num\n  [longest use2? use3? use4? use5? num6 num7 num8 num9]\n  (let [x (make-num use2? use3? use4? use5? num6 num7 num8 num9)\n        steps (check-longest-digit-multiplication-expansion x)]\n    (swap! longest (fn [[best-x best-steps]]\n                     (if (or (&lt; best-steps steps)\n                             (and (= best-steps steps)\n                                  (&lt; (count best-x) (count x))))\n                       [x steps]\n                       [best-x best-steps])))))&quot;, :offset 499, :ns &quot;math&quot;} {:command &quot;(defn evaluate-num\n  [longest use2? use3? use4? use5? num6 num7 num8 num9]\n  (let [x (make-num use2? use3? use4? use5? num6 num7 num8 num9)\n        steps (check-longest-digit-multiplication-expansion x)]\n    (swap! longest (fn [[best-x best-steps]]\n                     (cond (&lt; best-steps steps) [x steps]\n                           (and (= best-steps steps)\n                                (&lt; (count x) (count best-x))) [x steps]\n                           :else [best-x best-steps])))))&quot;, :offset 489, :ns &quot;math&quot;} {:command &quot;(&lt;  277777788888899 (Integer/MAX_VALUE))&quot;, :offset 40, :ns &quot;user&quot;} {:command &quot;(type 277777788888899)&quot;, :offset 22, :ns &quot;user&quot;} {:command &quot;(type (* ^Long 2 ^Long 3))&quot;, :offset 26, :ns &quot;user&quot;} {:command &quot;(+ 1 1)&quot;, :offset 7, :ns &quot;user&quot;} {:command &quot;(* ^Long 2 ^Long 5)&quot;, :offset 19, :ns &quot;math&quot;} {:command &quot;(* (long 2) (long 5))&quot;, :offset 21, :ns &quot;math&quot;} {:command &quot;(type (* (long 2) (long 5)))&quot;, :offset 28, :ns &quot;math&quot;} {:command &quot;(comment\n  (t/set-level! :warn)\n  (find-longest-digit-multiplication-expansion 5)\n  (type (* (long 2) (long 5))))&quot;, :offset 113, :ns &quot;math&quot;} {:command &quot;(type (* 1 (long 2)))&quot;, :offset 21, :ns &quot;user&quot;} {:command &quot;(find-longest-digit-multiplication-expansion 8)&quot;, :offset 47, :ns &quot;math&quot;} {:command &quot;(defn find-longest-digit-multiplication-expansion\n  \&quot;Finds the shortest whole number whose digits, can be iteratively multiplied\n  the most times. Current record holder is 277777788888899 with 11 iterations.\&quot;\n  [num-combos-to-try]\n  (let [longest (atom [(list) 0])]\n    (print (or (map (fn [use2?]\n                (map (fn [use3?]\n                       (map (fn [use4?]\n                              (map (fn [num5]\n                                     (map (fn [num6]\n                                            (map (fn [num7]\n                                                   (map (fn [num8]\n                                                          (map (fn [num9]\n                                                                 (evaluate-num longest\n                                                                               (make-num use2? use3? use4? num5 num6 num7 num8 num9))\n                                                                 nil)\n                                                               (range num-combos-to-try)))\n                                                        (range num-combos-to-try)))\n                                                 (range num-combos-to-try)))\n                                          (range num-combos-to-try)))\n                                   (range num-combos-to-try)))\n                            [true false]))\n                     [true false]))\n              [true false])))\n    @longest))&quot;, :offset 1470, :ns &quot;math&quot;} {:command &quot;(find-longest-digit-multiplication-expansion 4)&quot;, :offset 47, :ns &quot;math&quot;} {:command &quot;(find-longest-digit-multiplication-expansion 5)&quot;, :offset 47, :ns &quot;math&quot;} {:command &quot;(find-longest-digit-multiplication-expansion 6)&quot;, :offset 47, :ns &quot;math&quot;} {:command &quot;(find-longest-digit-multiplication-expansion 7)&quot;, :offset 47, :ns &quot;math&quot;} {:command &quot;(repeat true 1)&quot;, :offset 15, :ns &quot;user&quot;} {:command &quot;(repeat 0 1)&quot;, :offset 12, :ns &quot;user&quot;} {:command &quot;(find-highest-mult-persistence 22)&quot;, :offset 34, :ns &quot;math&quot;} {:command &quot;(defn find-highest-mult-persistence\n  \&quot;Finds the shortest whole number whose digits, can be iteratively multiplied\n  the most times. Current record holder is 277777788888899 with 11 iterations.\&quot;\n  [num-digits]\n  (let [best (atom {:num     (list)\n                    :steps   0\n                    :longest 0})\n        num-digits (int (inc (/ (+ 3 num-digits) 5)))\n        digit-params (combo/cartesian-product\n                       [true false]\n                       [true false]\n                       [true false]\n                       (range num-digits)\n                       (range num-digits)\n                       (range num-digits)\n                       (range num-digits)\n                       (range num-digits))]\n    (letfn [(check-num [x]\n              (let [steps (mult-persistence x)]\n                (swap! best #(cond-&gt; %\n                                     (&lt; (:steps %) steps) (assoc :num x :steps steps)\n                                     (and (= (:steps %) steps)\n                                          (&lt; (count x) (count (:num %)))) (assoc :num x :steps steps)\n                                     (&lt; (:longest %) (count x)) (assoc :longest (count x))))))\n            (make-num [use2? use3? use4? num5 num6 num7 num8 num9]\n              (lazy-cat\n                (repeat (if use2? 0 1) 2)\n                (repeat (if (and use3? (not use2?)) 0 1) 3)\n                (repeat (if (and use4? (not use2?)) 0 1) 4)\n                (repeat (if (not use2?) 0 num5) 5)\n                (repeat num6 6)\n                (repeat num7 7)\n                (repeat num8 8)\n                (repeat num9 9)))]\n      (doall\n        (pmap #(check-num (apply make-num %)) digit-params))\n      @best)))&quot;, :offset 1713, :ns &quot;math&quot;} {:command &quot;(find-highest-mult-persistence 16)&quot;, :offset 34, :ns &quot;math&quot;} {:command &quot;(find-highest-mult-persistence 50)&quot;, :offset 34, :ns &quot;math&quot;} {:command &quot;(find-highest-mult-persistence 75)&quot;, :offset 34, :ns &quot;math&quot;} {:command &quot;(t/set-level! :warn)&quot;, :offset 20, :ns &quot;math&quot;} {:command &quot;(t/set-level! :info)&quot;, :offset 20, :ns &quot;math&quot;} {:command &quot;(find-highest-mult-persistence 45)&quot;, :offset 34, :ns &quot;math&quot;} {:command &quot;(def mult-persistence\n  (let [mem (atom {})]\n    (fn [&amp; args]\n      (if-let [e (find @mem (first args))]\n        (val e)\n        (let [ret (apply _mult-persistence args)]\n          (swap! mem assoc (first args) ret)\n          ret)))))&quot;, :offset 234, :ns &quot;math&quot;} {:command &quot;(def mult-persistence\n  (let [mem (atom {})]\n    (fn\n      ([x step]\n         (if-let [e (find @mem x)]\n           (val e)\n           (let [ret (_mult-persistence x step)]\n             (swap! mem assoc x ret)\n             ret)))\n      ([x]\n        (_mult-persistence x 0)))))&quot;, :offset 275, :ns &quot;math&quot;} {:command &quot;(def mult-persistence\n  (let [mem (atom {})]\n    (fn\n      ([x step]\n         (if-let [e (find @mem x)]\n           (val e)\n           (let [ret (_mult-persistence x step)]\n             (swap! mem assoc x ret)\n             ret)))\n      ([x]\n       (swap! mem assoc x (_mult-persistence x 0))))))&quot;, :offset 294, :ns &quot;math&quot;} {:command &quot;(def mult-persistence\n  (let [mem (atom {})]\n    (fn\n      ([x step]\n         (if-let [e (find @mem x)]\n           (val e)\n           (let [ret (_mult-persistence x step)]\n             (swap! mem assoc x ret)\n             ret)))\n      ([x]\n       (let [ret (_mult-persistence x 0)]\n         (swap! mem assoc x ret)\n         ret)))))&quot;, :offset 332, :ns &quot;math&quot;} {:command &quot;(find-highest-mult-persistence 25)&quot;, :offset 34, :ns &quot;math&quot;} {:command &quot;(find-highest-mult-persistence 30)&quot;, :offset 34, :ns &quot;math&quot;} {:command &quot;(find-highest-mult-persistence 40)&quot;, :offset 34, :ns &quot;math&quot;} {:command &quot;(find-highest-mult-persistence 20)&quot;, :offset 34, :ns &quot;math&quot;} {:command &quot;(find-highest-mult-persistence 4)&quot;, :offset 33, :ns &quot;math&quot;} {:command &quot;(find-highest-mult-persistence 10)&quot;, :offset 34, :ns &quot;math&quot;} {:command &quot;(find-highest-mult-persistence 15)&quot;, :offset 34, :ns &quot;math&quot;} {:command &quot;(find-highest-mult-persistence 0)&quot;, :offset 33, :ns &quot;math&quot;} {:command &quot;(find-highest-mult-persistence 2)&quot;, :offset 33, :ns &quot;math&quot;} {:command &quot;(find-highest-mult-persistence 1)&quot;, :offset 33, :ns &quot;math&quot;} {:command &quot;(find-highest-mult-persistence 5)&quot;, :offset 33, :ns &quot;math&quot;} {:command &quot;(find-highest-mult-persistence 6)&quot;, :offset 33, :ns &quot;math&quot;} {:command &quot;(find-highest-mult-persistence 7)&quot;, :offset 33, :ns &quot;math&quot;} {:command &quot;(find-highest-mult-persistence 8)&quot;, :offset 33, :ns &quot;math&quot;} {:command &quot;(mult-persistence 277777788888899)&quot;, :offset 34, :ns &quot;math&quot;} {:command &quot;(find-highest-mult-persistence 9)&quot;, :offset 33, :ns &quot;math&quot;} {:command &quot;(find-highest-mult-persistence 12)&quot;, :offset 34, :ns &quot;math&quot;} {:command &quot;1&quot;, :offset 1, :ns &quot;user&quot;} {:command &quot;(find-highest-mult-persistence 3)&quot;, :offset 33, :ns &quot;math&quot;}], :remote []}}</component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="REPL" type="ClojureREPL" factoryName="Local" activateToolWindowBeforeRun="false">
+      <module name="hpl-util" />
+      <setting name="replType" value="CLOJURE_MAIN" />
+      <setting name="execution" value="DEPS" />
+      <setting name="jvmArgs" value="" />
+      <setting name="parameters" value="" />
+      <setting name="workingDir" value="$PROJECT_DIR$" />
+      <setting name="profiles" value="" />
+      <setting name="aliases" value="rebl" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="ClojureREPL" factoryName="Local" activateToolWindowBeforeRun="false">
+      <setting name="replType" value="NREPL" />
+      <setting name="execution" value="LEININGEN" />
+      <module name="" />
+      <setting name="jvmArgs" value="" />
+      <setting name="parameters" value="" />
+      <setting name="workingDir" value="" />
+      <setting name="profiles" value="" />
+      <setting name="aliases" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="ClojureREPL" factoryName="Remote" activateToolWindowBeforeRun="false">
+      <setting name="host" value="" />
+      <setting name="port" value="0" />
+      <setting name="replType" value="0" />
+      <module name="" />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1616" height="916" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info content_ui="combo" id="Project" order="0" weight="0.25" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Designer" order="2" />
+      <window_info id="UI Designer" order="3" />
+      <window_info id="Favorites" order="4" side_tool="true" />
+      <window_info anchor="bottom" id="FindBugs-IDEA" order="0" />
+      <window_info anchor="bottom" id="Build" order="1" sideWeight="0.4978242" weight="0.32056195" />
+      <window_info anchor="bottom" id="Terminal" order="2" />
+      <window_info anchor="bottom" id="Docker" order="3" show_stripe_button="false" />
+      <window_info anchor="bottom" id="CheckStyle" order="4" />
+      <window_info anchor="bottom" id="Event Log" order="5" side_tool="true" />
+      <window_info anchor="bottom" id="Run with VisualVM" order="6" />
+      <window_info anchor="bottom" id="Database Changes" order="7" />
+      <window_info anchor="bottom" id="Version Control" order="8" />
+      <window_info anchor="bottom" id="Debug with VisualVM" order="9" />
+      <window_info anchor="bottom" id="Message" order="10" />
+      <window_info anchor="bottom" id="Find" order="11" />
+      <window_info anchor="bottom" id="Run" order="12" />
+      <window_info anchor="bottom" id="Debug" order="13" sideWeight="0.69720346" weight="0.29246488" />
+      <window_info anchor="bottom" id="Cvs" order="14" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="15" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="16" />
+      <window_info anchor="bottom" x="0" y="0" width="354" height="716" id="Documentation" order="17" sideWeight="0.30279654" side_tool="true" visible="true" weight="0.29246488" />
+      <window_info anchor="right" id="Maven" order="0" />
+      <window_info anchor="right" id="Palette" order="1" />
+      <window_info anchor="right" id="Google Cloud Storage" order="2" />
+      <window_info anchor="right" id="SciView" order="3" />
+      <window_info anchor="right" id="Database" order="4" />
+      <window_info anchor="right" id="Leiningen" order="5" />
+      <window_info anchor="right" id="Palette&#9;" order="6" />
+      <window_info anchor="right" id="Clojure Deps" order="7" sideWeight="0.49808428" weight="0.2840617" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="8" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="9" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="10" weight="0.25" />
+      <window_info active="true" anchor="right" x="925" y="70" width="442" height="783" id="REPL" order="11" sideWeight="0.5021758" side_tool="true" visible="true" weight="0.33354756" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="debuggerHistoryManager">
+    <expressions id="breakpointCondition">
+      <expression>
+        <expression-string>(= x 277777788888899)</expression-string>
+        <language-id>Clojure</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+    </expressions>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="jar://$MAVEN_REPOSITORY$/org/clojure/clojure/1.10.0/clojure-1.10.0.jar!/clojure/core.clj">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="158800">
+          <caret line="6352" column="8" selection-start-line="6352" selection-start-column="6" selection-end-line="6356" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/script.clj">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="50">
+          <caret line="2" selection-start-line="2" selection-end-line="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/math.clj">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="208">
+          <caret line="68" column="31" lean-forward="true" selection-start-line="68" selection-start-column="31" selection-end-line="68" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/deps.edn">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="100">
+          <caret line="4" column="9" lean-forward="true" selection-start-line="4" selection-start-column="7" selection-end-line="13" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>No facets are configured</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>d3.v4</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>hpl-util</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+                <option value="0.6" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectJDKs.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>Deps: org.clojure/clojure:1.9.0</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>
