@@ -2,7 +2,8 @@
         com.taoensso/timbre            {:mvn/version "4.10.0"}
         org.clojure/math.combinatorics {:mvn/version "0.1.4"}
         uncomplicate/neanderthal       {:mvn/version "0.22.0"}
-        ubergraph                      {:mvn/version "0.5.2"}}
+        ubergraph                      {:mvn/version "0.5.2"}
+        com.taoensso/nippy                     {:mvn/version "2.14.0"}}
  :aliases
        {:rebl {:extra-deps {org.clojure/clojure         {:mvn/version "1.10.0"}
                             org.clojure/core.async      {:mvn/version "0.4.490"}
