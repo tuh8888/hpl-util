@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<module external.linked.project.id="hpl-util" external.linked.project.path="C:\Users\pielkelh\Drive\projects\hpl-util" external.root.project.path="$MODULE_DIR$/../.." external.system.id="CLOJURE_DEPS" type="JAVA_MODULE" version="4">
+<module external.linked.project.id="hpl-util" external.linked.project.path="$MODULE_DIR$/../.." external.root.project.path="$MODULE_DIR$/../.." external.system.id="CLOJURE_DEPS" type="JAVA_MODULE" version="4">
+  <component name="FacetManager">
+    <facet type="Python" name="Python">
+      <configuration sdkName="" />
+    </facet>
+  </component>
   <component name="NewModuleRootManager" inherit-compiler-output="true">
     <exclude-output />
     <content url="file://$MODULE_DIR$/../..">
@@ -9,13 +14,13 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="Deps: org.clojure/clojure:1.10.0" level="project" />
-    <orderEntry type="library" name="Deps: com.taoensso/timbre:4.10.0" level="project" />
-    <orderEntry type="library" name="Deps: org.clojure/math.combinatorics:0.1.4" level="project" />
-    <orderEntry type="library" name="Deps: org.clojure/spec.alpha:0.2.176" level="project" />
-    <orderEntry type="library" name="Deps: org.clojure/core.specs.alpha:0.2.44" level="project" />
-    <orderEntry type="library" name="Deps: com.taoensso/encore:2.91.0" level="project" />
-    <orderEntry type="library" name="Deps: io.aviso/pretty:0.1.33" level="project" />
-    <orderEntry type="library" name="Deps: org.clojure/tools.reader:0.10.0" level="project" />
     <orderEntry type="library" name="Deps: com.taoensso/truss:1.5.0" level="project" />
+    <orderEntry type="library" name="Deps: org.clojure/tools.reader:0.10.0" level="project" />
+    <orderEntry type="library" name="Deps: io.aviso/pretty:0.1.33" level="project" />
+    <orderEntry type="library" name="Deps: com.taoensso/encore:2.91.0" level="project" />
+    <orderEntry type="library" name="Deps: org.clojure/core.specs.alpha:0.2.44" level="project" />
+    <orderEntry type="library" name="Deps: org.clojure/spec.alpha:0.2.176" level="project" />
+    <orderEntry type="library" name="Deps: org.clojure/math.combinatorics:0.1.4" level="project" />
+    <orderEntry type="library" name="Deps: com.taoensso/timbre:4.10.0" level="project" />
   </component>
 </module>
