@@ -1,6 +1,7 @@
 (ns math
   (:require [taoensso.timbre :as t]
-            [clojure.math.combinatorics :as combo]))
+            [clojure.math.combinatorics :as combo]
+            [uncomplicate.neanderthal.core :as thal]))
 
 (defn digits
   "Returns the digits of a number"
@@ -11,6 +12,21 @@
   [x n]
   (reduce * (repeat n x)))
 (declare mult-persistence)
+
+(defn unit-vec
+  [v]
+  (thal/scal (/ (thal/nrm2 v)) v))
+
+(defn cosine-sim
+  [v1 v2]
+  (thal/dot (unit-vec v1)
+       (unit-vec v2)))
+
+(defn unit-vec-sum
+  [& vectors]
+  (if (<= 2 (count vectors))
+    (unit-vec (apply thal/xpy vectors))
+    (unit-vec (first vectors))))
 
 (defn _mult-persistence
   ([x step]

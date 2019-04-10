@@ -1,6 +1,7 @@
 {:deps {org.clojure/clojure            {:mvn/version "1.10.0"}
         com.taoensso/timbre            {:mvn/version "4.10.0"}
-        org.clojure/math.combinatorics {:mvn/version "0.1.4"}}
+        org.clojure/math.combinatorics {:mvn/version "0.1.4"}
+        uncomplicate/neanderthal {:mvn/version "0.22.0"}}
  :aliases
        {:rebl {:extra-deps {org.clojure/clojure         {:mvn/version "1.10.0"}
                             org.clojure/core.async      {:mvn/version "0.4.490"}
