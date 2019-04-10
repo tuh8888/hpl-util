@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f5c272dc-f890-4f38-9e78-366c9498b59c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/math.clj" beforeDir="false" afterPath="$PROJECT_DIR$/src/math.clj" afterDir="false" />
-    </list>
+    <list default="true" id="f5c272dc-f890-4f38-9e78-366c9498b59c" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -103,8 +100,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/math.clj">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="440">
-              <caret line="83" lean-forward="true" selection-start-line="83" selection-end-line="83" />
+            <state relative-caret-position="154">
+              <caret line="70" column="40" lean-forward="true" selection-start-line="70" selection-start-column="40" selection-end-line="70" selection-end-column="40" />
             </state>
           </provider>
         </entry>
@@ -161,7 +158,26 @@
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
-    <panes />
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="hpl-util" type="b2602c69:ProjectViewProjectNode" />
+              <item name="hpl-util" type="72ca9032:PsiDirectoryNodeCustom" />
+            </path>
+            <path>
+              <item name="hpl-util" type="b2602c69:ProjectViewProjectNode" />
+              <item name="hpl-util" type="72ca9032:PsiDirectoryNodeCustom" />
+              <item name="src" type="72ca9032:PsiDirectoryNodeCustom" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
+    </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
@@ -269,7 +285,8 @@
     <MESSAGE value="Added map-kv" />
     <MESSAGE value="Added vector operations" />
     <MESSAGE value="Added graph" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added graph" />
+    <MESSAGE value="Added evaluation statistics functions" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added evaluation statistics functions" />
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="breakpointCondition">
@@ -319,8 +336,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/math.clj">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="440">
-          <caret line="83" lean-forward="true" selection-start-line="83" selection-end-line="83" />
+        <state relative-caret-position="154">
+          <caret line="70" column="40" lean-forward="true" selection-start-line="70" selection-start-column="40" selection-end-line="70" selection-end-column="40" />
         </state>
       </provider>
     </entry>
