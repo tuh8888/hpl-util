@@ -28,6 +28,51 @@
     (unit-vec (apply thal/xpy vectors))
     (unit-vec (first vectors))))
 
+(defn pred-false
+  [& [{:keys [predicted-true all]}]]
+  (clojure.set/difference all predicted-true))
+
+(defn actual-false
+  [& [{:keys [actual-true all]}]]
+  (clojure.set/difference all actual-true))
+
+(defn true-pos
+  [& [{:keys [predicted-true actual-true]}]]
+  (clojure.set/intersection predicted-true actual-true))
+(defn true-neg
+  [& [params]]
+  (clojure.set/intersection (pred-false params)
+                            (actual-false params)))
+(defn false-pos
+  [& [{:keys [predicted-true] :as params}]]
+  (clojure.set/intersection predicted-true
+                            (actual-false params)))
+(defn false-neg
+  [& [{:keys [actual-true] :as params}]]
+  (clojure.set/intersection (pred-false params)
+                            actual-true))
+
+(defn precision
+  [& [params]]
+  (float (/ (count (true-pos params)) (+ (count (true-pos params)) (count (false-pos params))))))
+(defn recall
+  [& [params]]
+  (float (/ (count (true-pos params)) (+ (count (true-pos params)) (count (false-neg params))))))
+(defn f1
+  [& [params]]
+  (float (/ (* 2 (precision params) (recall params))
+            (+ (precision params) (recall params)))))
+
+(defn calc-metrics
+  [& [params]]
+  {:tp        (count (true-pos params))
+   :tn        (count (true-neg params))
+   :fp        (count (false-pos params))
+   :fn        (count (false-neg params))
+   :precision (precision params)
+   :recall    (recall params)
+   :f1        (params f1)})
+
 (defn _mult-persistence
   ([x step]
    (let [x (if (coll? x) x (digits x))]
