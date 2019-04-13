@@ -71,7 +71,7 @@
    :fn        (count (false-neg params))
    :precision (precision params)
    :recall    (recall params)
-   :f1        (params f1)})
+   :f1        (f1 params)})
 
 (defn _mult-persistence
   ([x step]
