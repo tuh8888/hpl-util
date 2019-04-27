@@ -1,4 +1,8 @@
-(ns util)
+(ns util
+  (:require [clojure.set :as cset]
+            [taoensso.timbre :as log]
+            [com.climate.claypoole :as cp])
+  (:import (clojure.lang IDeref IBlockingDeref IFn IPending)))
 
 (defn map-kv
   [f m]
@@ -20,3 +24,38 @@
           (match-fn s1 s2))
         coll2))
     coll1))
+
+(defn lowercase?
+  [^Character char]
+  (or (not (Character/isLetter char))
+      (Character/isLowerCase char)))
+(defn all-lowercase
+  [^String string]
+  (and (every? lowercase? string) string))
+
+(defn recursively
+  [fn arg]
+  (loop [results (fn arg)
+         others (set results)
+         completed #{}]
+    (let [completed (cset/union completed results)
+          others (cset/difference others results)]
+      (if (empty? others)
+        completed
+        (recur (fn (first others)) (rest others) completed)))))
+
+(defn pdoseq-partitioned
+  [f m partition-size]
+  (let [partitioned-m (partition-all partition-size m)
+        num-parts (count partitioned-m)]
+    (cp/pdoseq (inc (cp/ncpus))
+               [[i part] (map-indexed vector partitioned-m)]
+               (log/info "Partition:" i "/" num-parts)
+               (f part))))
+
+(defn promise? [v]
+  (every? #(instance? % v)
+          [IPending
+           IFn
+           IBlockingDeref
+           IDeref]))

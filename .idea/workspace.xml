@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f5c272dc-f890-4f38-9e78-366c9498b59c" name="Default Changelist" comment="Init Abra-C">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="f5c272dc-f890-4f38-9e78-366c9498b59c" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -35,7 +33,7 @@
     <option name="modificationStamps">
       <map>
         <entry key="$USER_HOME$/.clojure/deps.edn" value="1741300601" />
-        <entry key="$PROJECT_DIR$" value="4664221861000" />
+        <entry key="$PROJECT_DIR$" value="4664221988000" />
         <entry key="$PROJECT_DIR$/deps.edn" value="4274956897" />
         <entry key="/usr/local/lib/clojure/deps.edn" value="3427141421" />
       </map>
@@ -86,10 +84,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/build.boot">
+        <entry file="file://$PROJECT_DIR$/src/math.clj">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="154">
-              <caret line="7" column="46" lean-forward="true" selection-start-line="7" selection-start-column="46" selection-end-line="7" selection-end-column="46" />
+            <state relative-caret-position="242">
+              <caret line="68" column="39" lean-forward="true" selection-start-line="68" selection-start-column="39" selection-end-line="68" selection-end-column="39" />
             </state>
           </provider>
         </entry>
@@ -111,21 +109,21 @@
       <list>
         <option value="$PROJECT_DIR$/src/util.clj" />
         <option value="$PROJECT_DIR$/src/graph.clj" />
-        <option value="$PROJECT_DIR$/src/math.clj" />
         <option value="$PROJECT_DIR$/src/cluster.clj" />
         <option value="$PROJECT_DIR$/src/script.clj" />
         <option value="$PROJECT_DIR$/deps.edn" />
         <option value="$PROJECT_DIR$/build.boot" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/src/core.clj" />
+        <option value="$PROJECT_DIR$/src/math.clj" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="3600" />
-    <option name="y" value="34" />
-    <option name="width" value="1600" />
-    <option name="height" value="896" />
+    <option name="x" value="1920" />
+    <option name="y" value="30" />
+    <option name="width" value="1680" />
+    <option name="height" value="1050" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -264,7 +262,8 @@
     <MESSAGE value="Added cluster tools" />
     <MESSAGE value="Added boot script" />
     <MESSAGE value="Init Abra-C" />
-    <option name="LAST_COMMIT_MESSAGE" value="Init Abra-C" />
+    <MESSAGE value="fixed f1 calculation" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed f1 calculation" />
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="breakpointCondition">
@@ -309,13 +308,6 @@
     <entry file="file://$PROJECT_DIR$/target/AUTHORS">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="22">
-          <caret line="1" selection-start-line="1" selection-end-line="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/target/Util.java">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -328,13 +320,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/target/walk.clj">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/math.clj">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="572">
-          <caret line="26" column="28" selection-start-line="26" selection-start-column="28" selection-end-line="26" selection-end-column="28" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/core.clj">
       <provider selected="true" editor-type-id="text-editor">
@@ -353,7 +338,21 @@
     <entry file="file://$PROJECT_DIR$/build.boot">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="154">
-          <caret line="7" column="46" lean-forward="true" selection-start-line="7" selection-start-column="46" selection-end-line="7" selection-end-column="46" />
+          <caret line="7" column="46" selection-start-line="7" selection-start-column="46" selection-end-line="7" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="22">
+          <caret line="1" selection-start-line="1" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/math.clj">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="68" column="39" lean-forward="true" selection-start-line="68" selection-start-column="39" selection-end-line="68" selection-end-column="39" />
         </state>
       </provider>
     </entry>

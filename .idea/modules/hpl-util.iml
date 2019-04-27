@@ -15,6 +15,7 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="Deps: org.clojure/clojure:1.10.0" level="project" />
+    <orderEntry type="library" name="Deps: com.climate/claypoole:1.1.4" level="project" />
     <orderEntry type="library" name="Deps: org.clojure/google-closure-library-third-party:0.0-20151016-61277aea" level="project" />
     <orderEntry type="library" name="Deps: com.google.javascript/closure-compiler:v20151015" level="project" />
     <orderEntry type="library" name="Deps: org.mozilla/rhino:1.7R5" level="project" />
