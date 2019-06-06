@@ -9,6 +9,11 @@
   (zipmap (keys m)
           (map f (vals m))))
 
+(defn pmap-kv
+  [f m]
+  (zipmap (keys m)
+          (pmap f (vals m))))
+
 (defn parse-int
   [x]
   (try (Integer/parseInt x)
