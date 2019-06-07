@@ -1,13 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f5c272dc-f890-4f38-9e78-366c9498b59c" name="Default Changelist" comment="Some string fns and parallelization fns">
-      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/tuh8888.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/tuh8888.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/hpl-util.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/hpl-util.iml" afterDir="false" />
+    <list default="true" id="f5c272dc-f890-4f38-9e78-366c9498b59c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/script.clj" beforeDir="false" afterPath="$PROJECT_DIR$/src/script.clj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/util.clj" beforeDir="false" afterPath="$PROJECT_DIR$/src/util.clj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cluster_tools.clj" beforeDir="false" afterPath="$PROJECT_DIR$/src/cluster_tools.clj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/cluster_tools.clj" beforeDir="false" afterPath="$PROJECT_DIR$/target/cluster_tools.clj" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -81,6 +78,15 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/cluster_tools.clj">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="654">
+              <caret line="30" column="18" selection-start-line="30" selection-start-column="18" selection-end-line="30" selection-end-column="18" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/core.clj">
           <provider selected="true" editor-type-id="text-editor">
@@ -117,11 +123,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/util.clj">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="308">
-              <caret line="14" column="12" selection-start-line="14" selection-start-column="12" selection-end-line="14" selection-end-column="12" />
+            <state relative-caret-position="440">
+              <caret line="20" column="13" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -150,6 +156,7 @@
         <option value="$PROJECT_DIR$/deps.edn" />
         <option value="$PROJECT_DIR$/src/script.clj" />
         <option value="$PROJECT_DIR$/src/util.clj" />
+        <option value="$PROJECT_DIR$/src/cluster_tools.clj" />
       </list>
     </option>
   </component>
@@ -164,7 +171,26 @@
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
-    <panes />
+    <panes>
+      <pane id="PackagesPane" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="hpl-util" type="b2602c69:ProjectViewProjectNode" />
+              <item name="hpl-util" type="72ca9032:PsiDirectoryNodeCustom" />
+            </path>
+            <path>
+              <item name="hpl-util" type="b2602c69:ProjectViewProjectNode" />
+              <item name="hpl-util" type="72ca9032:PsiDirectoryNodeCustom" />
+              <item name="src" type="72ca9032:PsiDirectoryNodeCustom" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+    </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
@@ -278,7 +304,7 @@
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="8" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="9" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="10" weight="0.25" />
-      <window_info active="true" anchor="right" x="3532" y="662" width="827" height="562" id="REPL" order="11" sideWeight="0.5010941" side_tool="true" type="FLOATING" visible="true" weight="0.32905984" />
+      <window_info anchor="right" x="3532" y="662" width="827" height="562" id="REPL" order="11" sideWeight="0.5010941" side_tool="true" type="FLOATING" visible="true" weight="0.32905984" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -294,7 +320,8 @@
     <MESSAGE value="Init Abra-C" />
     <MESSAGE value="fixed f1 calculation" />
     <MESSAGE value="Some string fns and parallelization fns" />
-    <option name="LAST_COMMIT_MESSAGE" value="Some string fns and parallelization fns" />
+    <MESSAGE value="Added pmap version of mapkv" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added pmap version of mapkv" />
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="breakpointCondition">
@@ -315,13 +342,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/cluster.clj" />
-    <entry file="file://$PROJECT_DIR$/src/cluster_tools.clj">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="7" column="40" selection-start-line="7" selection-start-column="40" selection-end-line="7" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/graph.clj">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="154">
@@ -382,8 +402,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/util.clj">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="14" column="12" selection-start-line="14" selection-start-column="12" selection-end-line="14" selection-end-column="12" />
+        <state relative-caret-position="440">
+          <caret line="20" column="13" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cluster_tools.clj">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="654">
+          <caret line="30" column="18" selection-start-line="30" selection-start-column="18" selection-end-line="30" selection-end-column="18" />
         </state>
       </provider>
     </entry>
