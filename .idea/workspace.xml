@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f5c272dc-f890-4f38-9e78-366c9498b59c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/dictionaries/harrison.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/cluster_tools.clj" beforeDir="false" afterPath="$PROJECT_DIR$/src/cluster_tools.clj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/math.clj" beforeDir="false" afterPath="$PROJECT_DIR$/src/math.clj" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -78,11 +78,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/cluster_tools.clj">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="852">
-              <caret line="55" column="30" selection-start-line="55" selection-start-column="30" selection-end-line="55" selection-end-column="30" />
+            <state relative-caret-position="374">
+              <caret line="17" column="68" selection-start-line="17" selection-start-column="68" selection-end-line="17" selection-end-column="68" />
             </state>
           </provider>
         </entry>
@@ -99,17 +99,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/deps.edn">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="88">
-              <caret line="4" column="9" selection-start-line="4" selection-start-column="9" selection-end-line="4" selection-end-column="9" />
+            <state relative-caret-position="374">
+              <caret line="17" column="54" selection-start-line="17" selection-start-column="54" selection-end-line="17" selection-end-column="54" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/math.clj">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="280">
-              <caret line="24" column="18" selection-start-line="24" selection-start-column="18" selection-end-line="24" selection-end-column="18" />
+            <state relative-caret-position="396">
+              <caret line="18" column="5" lean-forward="true" selection-start-line="18" selection-start-column="5" selection-end-line="18" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -152,45 +152,26 @@
         <option value="$PROJECT_DIR$/build.boot" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/src/core.clj" />
-        <option value="$PROJECT_DIR$/src/math.clj" />
         <option value="$PROJECT_DIR$/deps.edn" />
         <option value="$PROJECT_DIR$/src/script.clj" />
         <option value="$PROJECT_DIR$/src/util.clj" />
         <option value="$PROJECT_DIR$/src/cluster_tools.clj" />
+        <option value="$PROJECT_DIR$/src/math.clj" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="1920" />
-    <option name="y" value="30" />
-    <option name="width" value="1680" />
-    <option name="height" value="1050" />
+    <option name="x" value="1599" />
+    <option name="y" value="29" />
+    <option name="width" value="1682" />
+    <option name="height" value="1022" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
-    <panes>
-      <pane id="PackagesPane" />
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="hpl-util" type="b2602c69:ProjectViewProjectNode" />
-              <item name="hpl-util" type="72ca9032:PsiDirectoryNodeCustom" />
-            </path>
-            <path>
-              <item name="hpl-util" type="b2602c69:ProjectViewProjectNode" />
-              <item name="hpl-util" type="72ca9032:PsiDirectoryNodeCustom" />
-              <item name="src" type="72ca9032:PsiDirectoryNodeCustom" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="Scope" />
-    </panes>
+    <panes />
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
@@ -198,7 +179,7 @@
     <property name="add_unversioned_files" value="true" />
     <property name="cursive.last.file.extension./home/tuh8888/Documents/hpl-util/src" value="clj" />
     <property name="cursive.last.file.extension.C\:/Users/pielkelh/Drive/projects/hpl-util/src" value="clj" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Word2Vec-clj" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../nlm2019" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Project" />
@@ -304,7 +285,7 @@
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="8" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="9" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="10" weight="0.25" />
-      <window_info anchor="right" x="3532" y="662" width="827" height="562" id="REPL" order="11" sideWeight="0.5010941" side_tool="true" type="FLOATING" visible="true" weight="0.32905984" />
+      <window_info anchor="right" x="3532" y="662" width="827" height="562" id="REPL" order="11" sideWeight="0.5010941" side_tool="true" type="FLOATING" weight="0.32905984" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -324,7 +305,9 @@
     <MESSAGE value="Find best cluster-sample pair" />
     <MESSAGE value="More efficient map-reduce method" />
     <MESSAGE value="Removed print statements" />
-    <option name="LAST_COMMIT_MESSAGE" value="Removed print statements" />
+    <MESSAGE value="Use native matrices for clustering" />
+    <MESSAGE value="allow math vecs to be released" />
+    <option name="LAST_COMMIT_MESSAGE" value="allow math vecs to be released" />
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="breakpointCondition">
@@ -382,13 +365,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/deps.edn">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="4" column="9" selection-start-line="4" selection-start-column="9" selection-end-line="4" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/script.clj">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="198">
@@ -403,17 +379,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/math.clj">
+    <entry file="file://$PROJECT_DIR$/deps.edn">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="280">
-          <caret line="24" column="18" selection-start-line="24" selection-start-column="18" selection-end-line="24" selection-end-column="18" />
+        <state relative-caret-position="374">
+          <caret line="17" column="54" selection-start-line="17" selection-start-column="54" selection-end-line="17" selection-end-column="54" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/cluster_tools.clj">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="852">
-          <caret line="55" column="30" selection-start-line="55" selection-start-column="30" selection-end-line="55" selection-end-column="30" />
+        <state relative-caret-position="374">
+          <caret line="17" column="68" selection-start-line="17" selection-start-column="68" selection-end-line="17" selection-end-column="68" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/math.clj">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="18" column="5" lean-forward="true" selection-start-line="18" selection-start-column="5" selection-end-line="18" selection-end-column="5" />
         </state>
       </provider>
     </entry>

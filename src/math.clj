@@ -2,7 +2,8 @@
   (:require [taoensso.timbre :as t]
             [clojure.math.combinatorics :as combo]
             [uncomplicate.neanderthal.core :as thal]
-            [uncomplicate.commons.core :as uncomplicate]))
+            [uncomplicate.commons.core :as uncomplicate]
+            [uncomplicate.neanderthal.real :as thal-real]))
 
 (defn digits
   "Returns the digits of a number"
@@ -30,6 +31,55 @@
     (uncomplicate/with-release [v (apply thal/xpy vectors)]
       (unit-vec v))
     (unit-vec (first vectors))))
+
+(defn vectors->matrix
+  [{:keys [factory]} vectors]
+  (let [d (some #(count (seq %)) vectors)]
+    (->> vectors
+         (mapcat seq)
+         (thal/ge factory d (count vectors)))))
+
+(defn mdot
+  [{:keys [matrix-fn] :as params} s1 s2]
+  (uncomplicate/with-release [s1-mat (matrix-fn params s1)
+                              s1-mat-trans (thal/trans s1-mat)
+                              s2-mat (matrix-fn params s2)]
+    #_(println (thal/mrows s1) (thal/ncols s1) (thal/mrows s2) (thal/ncols s2))
+    (thal/mm s1-mat-trans s2-mat)))
+
+(defn best-in-row-from-matrix
+  [score-mat init i s]
+  (->> s
+       (map-indexed vector)
+       (reduce
+         (fn [{:keys [score] :as best} [j pattern]]
+           (uncomplicate/with-release [new-score (thal-real/entry score-mat i j)]
+             (if (< score new-score)
+               {:match pattern :score (float score)}
+               best)))
+         init)))
+
+(defn find-best-match
+  [params s1 s2]
+  (uncomplicate/with-release [score-mat (mdot params s1 s2)]
+    (->> s1
+         (map-indexed vector)
+         (reduce
+           (fn [best [i sample]]
+             (-> (best-in-row-from-matrix score-mat best i s2)
+                 (assoc :sample sample)))
+           {})
+         (doall))))
+
+(defn find-best-row-matches
+  [params s1 s2]
+  (uncomplicate/with-release [score-mat (mdot params s1 s2)]
+    (->> s1
+         (map-indexed (fn [i sample]
+                        (-> score-mat
+                            (best-in-row-from-matrix {} i s2)
+                            (assoc :sample sample))))
+         (doall))))
 
 (defn pred-false
   [& [{:keys [predicted-true all]}]]
