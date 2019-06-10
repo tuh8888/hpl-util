@@ -18,40 +18,41 @@
 
 (defn unit-vec
   [v]
-  (thal/scal (/ (thal/nrm2 v)) v))
+  (uncomplicate/with-release [alpha (thal/nrm2 v)
+                              result (thal/scal (/ alpha) v)]
+    (float result)))
 
-(defn cosine-sim
-  [v1 v2]
-  (uncomplicate/with-release [v1 (unit-vec v1)
-                              v2 (unit-vec v2)
-                              result (thal/dot v1 v2)]
-    result))
+#_(defn cosine-sim
+    [v1 v2]
+    (uncomplicate/with-release [v1 (unit-vec v1)
+                                v2 (unit-vec v2)
+                                result (thal/dot v1 v2)]
+      result))
 
 (defn unit-vec-sum
   [& vectors]
-  (if (<= 2 (count vectors))
-    (uncomplicate/with-release [v (apply thal/xpy vectors)]
-      (unit-vec v))
-    (unit-vec (first vectors))))
+  (if (= 1 (count vectors))
+    (uncomplicate/with-release [v (first (map thal-native/dv))
+                                result (unit-vec v)]
+      (seq result))
+    (uncomplicate/with-release [vectors (map thal-native/dv vectors)
+                                v (apply thal/xpy vectors)
+                                result (unit-vec v)]
+      (seq result))))
 
-(defn sum-vectors
-  [vectors]
-  (uncomplicate/with-release [vectors (seq (map thal-native/dv (keep identity vectors)))
-                              result (when vectors (apply unit-vec-sum vectors))]
-    (seq result)))
 
 (defn vectors->matrix
   [{:keys [factory]} vectors]
-  (let [d (some #(count (seq %)) vectors)]
+  (let [d (some #(count %) vectors)]
     (->> vectors
          (mapcat seq)
          (thal/ge factory d (count vectors)))))
 
 (defn mdot
-  [{:keys [matrix-fn] :as params} s1 s2]
-  (uncomplicate/with-release [s1-mat (matrix-fn params s1)
+  [params s1 s2]
+  (uncomplicate/with-release [s1-mat (vectors->matrix params s1)
                               s1-mat-trans (thal/trans s1-mat)
-                              s2-mat (matrix-fn params s2)]
+                              s2-mat (vectors->matrix params s2)]
     #_(println (thal/mrows s1) (thal/ncols s1) (thal/mrows s2) (thal/ncols s2))
     (thal/mm s1-mat-trans s2-mat)))
 
@@ -68,8 +69,8 @@
          init)))
 
 (defn find-best-match
-  [params s1 s2]
-  (uncomplicate/with-release [score-mat (mdot params s1 s2)]
+  [{:keys [vector-fn] :as params} s1 s2]
+  (uncomplicate/with-release [score-mat (mdot params (map vector-fn s1) (map vector-fn s2))]
     (->> s1
          (map-indexed vector)
          (reduce
