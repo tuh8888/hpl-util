@@ -1,7 +1,8 @@
 (ns math
   (:require [taoensso.timbre :as t]
             [clojure.math.combinatorics :as combo]
-            [uncomplicate.neanderthal.core :as thal]))
+            [uncomplicate.neanderthal.core :as thal]
+            [uncomplicate.commons.core :as uncomplicate]))
 
 (defn digits
   "Returns the digits of a number"
@@ -19,13 +20,15 @@
 
 (defn cosine-sim
   [v1 v2]
-  (thal/dot (unit-vec v1)
-       (unit-vec v2)))
+  (uncomplicate/with-release [v1 (unit-vec v1)
+                              v2 (unit-vec v2)]
+    (thal/dot v1 v2)))
 
 (defn unit-vec-sum
   [& vectors]
   (if (<= 2 (count vectors))
-    (unit-vec (apply thal/xpy vectors))
+    (uncomplicate/with-release [v (apply thal/xpy vectors)]
+      (unit-vec v))
     (unit-vec (first vectors))))
 
 (defn pred-false
@@ -86,9 +89,9 @@
   (let [mem (atom {})]
     (fn
       ([x step]
-         (if-let [e (find @mem x)]
-           (val e)
-           (_mult-persistence x step)))
+       (if-let [e (find @mem x)]
+         (val e)
+         (_mult-persistence x step)))
       ([x]
        (let [ret (mult-persistence x 0)]
          (swap! mem assoc x ret)
@@ -99,8 +102,8 @@
   the most times. Current record holder is 277777788888899 with 11 iterations."
   [num-digits]
 
-  (let [best (atom {:num   (list)
-                    :steps 0
+  (let [best (atom {:num     (list)
+                    :steps   0
                     :longest 0})
         digit-params (combo/cartesian-product
                        [true false]
