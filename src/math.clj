@@ -3,7 +3,8 @@
             [clojure.math.combinatorics :as combo]
             [uncomplicate.neanderthal.core :as thal]
             [uncomplicate.commons.core :as uncomplicate]
-            [uncomplicate.neanderthal.real :as thal-real]))
+            [uncomplicate.neanderthal.real :as thal-real]
+            [uncomplicate.neanderthal.native :as thal-native]))
 
 (defn digits
   "Returns the digits of a number"
@@ -22,8 +23,9 @@
 (defn cosine-sim
   [v1 v2]
   (uncomplicate/with-release [v1 (unit-vec v1)
-                              v2 (unit-vec v2)]
-    (thal/dot v1 v2)))
+                              v2 (unit-vec v2)
+                              result (thal/dot v1 v2)]
+    result))
 
 (defn unit-vec-sum
   [& vectors]
@@ -31,6 +33,12 @@
     (uncomplicate/with-release [v (apply thal/xpy vectors)]
       (unit-vec v))
     (unit-vec (first vectors))))
+
+(defn sum-vectors
+  [vectors]
+  (uncomplicate/with-release [vectors (seq (map thal-native/dv (keep identity vectors)))
+                              result (when vectors (apply unit-vec-sum vectors))]
+    (seq result)))
 
 (defn vectors->matrix
   [{:keys [factory]} vectors]

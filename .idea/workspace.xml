@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f5c272dc-f890-4f38-9e78-366c9498b59c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cluster_tools.clj" beforeDir="false" afterPath="$PROJECT_DIR$/src/cluster_tools.clj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/math.clj" beforeDir="false" afterPath="$PROJECT_DIR$/src/math.clj" afterDir="false" />
-    </list>
+    <list default="true" id="f5c272dc-f890-4f38-9e78-366c9498b59c" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -307,7 +303,8 @@
     <MESSAGE value="Removed print statements" />
     <MESSAGE value="Use native matrices for clustering" />
     <MESSAGE value="allow math vecs to be released" />
-    <option name="LAST_COMMIT_MESSAGE" value="allow math vecs to be released" />
+    <MESSAGE value="Moved all uncomplicate to math ns" />
+    <option name="LAST_COMMIT_MESSAGE" value="Moved all uncomplicate to math ns" />
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="breakpointCondition">
