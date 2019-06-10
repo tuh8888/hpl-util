@@ -1,5 +1,5 @@
 (ns math
-  (:require [taoensso.timbre :as t]
+  (:require [taoensso.timbre :as log]
             [clojure.math.combinatorics :as combo]
             [uncomplicate.neanderthal.core :as thal]
             [uncomplicate.commons.core :as uncomplicate]
@@ -173,7 +173,7 @@
                        (range num-digits)
                        (range num-digits)
                        (range num-digits))]
-    (t/info "Num numbers to check: " (count digit-params))
+    (log/info "Num numbers to check: " (count digit-params))
 
     (letfn [(check-num [x]
               (let [steps (mult-persistence x)]
@@ -194,13 +194,13 @@
                 (repeat num9 9)))]
       (doall
         (pmap (fn [[i x]]
-                (when (zero? (rem i 100000)) (t/info i))
+                (when (zero? (rem i 100000)) (log/info i))
                 (check-num (apply make-num x)))
               (map-indexed vector digit-params)))
       (update @best :num #(BigInteger. ^String (apply str %))))))
 
 (comment
-  (t/set-level! :info)
+  (log/set-level! :info)
   (mult-persistence 277777788888899)
   (find-highest-mult-persistence 3)
   (combo/car)
