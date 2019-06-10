@@ -20,25 +20,25 @@
   [v]
   (uncomplicate/with-release [alpha (thal/nrm2 v)
                               result (thal/scal (/ alpha) v)]
-    (float result)))
+    (seq result)))
 
-#_(defn cosine-sim
-    [v1 v2]
-    (uncomplicate/with-release [v1 (unit-vec v1)
-                                v2 (unit-vec v2)
-                                result (thal/dot v1 v2)]
-      result))
+(defn cosine-sim
+  [v1 v2]
+  (uncomplicate/with-release [v1 (unit-vec v1)
+                              v2 (unit-vec v2)
+                              result (thal/dot v1 v2)]
+    result))
 
 (defn unit-vec-sum
   [& vectors]
-  (if (= 1 (count vectors))
-    (uncomplicate/with-release [v (first (map thal-native/dv))
-                                result (unit-vec v)]
-      (seq result))
-    (uncomplicate/with-release [vectors (map thal-native/dv vectors)
-                                v (apply thal/xpy vectors)
-                                result (unit-vec v)]
-      (seq result))))
+  (let [vectors (keep seq vectors)]
+
+    (cond (not (seq vectors)) nil
+          (= 1 (count vectors)) (uncomplicate/with-release [v (thal-native/dv (first vectors))]
+                                  (unit-vec v))
+          :else (uncomplicate/with-release [vectors (map thal-native/dv vectors)
+                                            v (apply thal/xpy vectors)]
+                  (unit-vec v)))))
 
 
 (defn vectors->matrix
@@ -77,16 +77,16 @@
            (fn [best [i sample]]
              (-> (best-in-row-from-matrix score-mat best i s2)
                  (assoc :sample sample)))
-           {})
+           {:score 0})
          (doall))))
 
 (defn find-best-row-matches
-  [params s1 s2]
-  (uncomplicate/with-release [score-mat (mdot params s1 s2)]
+  [{:keys [vector-fn] :as params} s1 s2]
+  (uncomplicate/with-release [score-mat (mdot params (map vector-fn s1) (map vector-fn s2))]
     (->> s1
          (map-indexed (fn [i sample]
                         (-> score-mat
-                            (best-in-row-from-matrix {} i s2)
+                            (best-in-row-from-matrix {:score 0} i s2)
                             (assoc :sample sample))))
          (doall))))
 
