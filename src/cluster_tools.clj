@@ -15,15 +15,13 @@
   [samples clusters {:keys [cluster-sim-fn cluster-thresh]}]
   (->> (cp/upfor (cp/ncpus) [sample samples
                              cluster clusters]
-                 (print ".")
                  {:score (cluster-sim-fn sample cluster) :cluster cluster :sample sample})
        (reduce
          (fn [best new]
            (if (< (:score best) (:score new))
              new
              best))
-         {:score cluster-thresh})
-       (do (println))))
+         {:score cluster-thresh})))
 
 (defn single-pass-cluster
   "Occurs in O(N^2*M) time"
