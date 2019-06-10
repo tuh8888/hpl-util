@@ -1,5 +1,10 @@
 (ns cluster-tools
-  (:require [com.climate.claypoole :as cp]))
+  (:require [com.climate.claypoole :as cp]
+            [taoensso.timbre :as log]
+            [uncomplicate.neanderthal.core :as thal]
+            [uncomplicate.neanderthal.native :as thal-native]
+            [uncomplicate.neanderthal.real :as thal-real]
+            [uncomplicate.commons.core :as uncomplicate]))
 
 (defn update-cluster
   [clusters cluster sample merge-fn]
@@ -12,16 +17,26 @@
   (conj clusters (merge-fn nil sample)))
 
 (defn nearest-sample-cluster-pair
-  [samples clusters {:keys [cluster-sim-fn cluster-thresh]}]
-  (->> (cp/upfor (cp/ncpus) [sample samples
-                             cluster clusters]
-                 {:score (cluster-sim-fn sample cluster) :cluster cluster :sample sample})
-       (reduce
-         (fn [best new]
-           (if (< (:score best) (:score new))
-             new
-             best))
-         {:score cluster-thresh})))
+  [samples clusters {:keys [cluster-thresh factory matrix-fn]}]
+  (when (and (seq samples) (seq clusters))
+    (uncomplicate/with-release [s1 (->> samples
+                                        (matrix-fn factory)
+                                        (thal/trans))
+                                s2 (matrix-fn factory clusters)
+                                score-m (thal/mm s1 s2)]
+      #_(println (thal/mrows s1) (thal/ncols s1) (thal/mrows s2 ) (thal/ncols s2))
+      (reduce
+        (fn [best [i sample]]
+          (reduce
+            (fn [{:keys [score] :as best} [j cluster]]
+              (let [new-score (thal-real/entry score-m i j)]
+                (if (< score new-score)
+                  {:cluster cluster :sample sample :score score}
+                  best)))
+            best
+            (map-indexed vector clusters)))
+        {:score cluster-thresh}
+        (map-indexed vector samples)))))
 
 (defn single-pass-cluster
   "Occurs in O(N^2*M) time"
