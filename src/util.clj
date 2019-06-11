@@ -2,7 +2,15 @@
   (:require [clojure.set :as cset]
             [taoensso.timbre :as log]
             [com.climate.claypoole :as cp])
-  (:import (clojure.lang IDeref IBlockingDeref IFn IPending)))
+  (:import (clojure.lang IDeref IBlockingDeref IFn IPending RT)
+           (java.util Collection ArrayList Random Collections)))
+
+(defn deterministic-shuffle
+  [seed ^Collection coll]
+  (let [al (ArrayList. coll)
+        rng (Random. seed)]
+    (Collections/shuffle al rng)
+    (RT/vector (.toArray al))))
 
 (defn map-kv
   [f m]
@@ -54,9 +62,9 @@
   (let [partitioned-m (partition-all partition-size m)
         num-parts (count partitioned-m)]
     (cp/pdoseq (inc (cp/ncpus))
-               [[i part] (map-indexed vector partitioned-m)]
-               (log/info "Partition:" i "/" num-parts)
-               (f part))))
+      [[i part] (map-indexed vector partitioned-m)]
+      (log/info "Partition:" i "/" num-parts)
+      (f part))))
 
 (defn promise? [v]
   (every? #(instance? % v)
