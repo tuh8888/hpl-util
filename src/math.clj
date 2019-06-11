@@ -3,8 +3,7 @@
             [clojure.math.combinatorics :as combo]
             [uncomplicate.neanderthal.core :as thal]
             [uncomplicate.commons.core :as uncomplicate]
-            [uncomplicate.neanderthal.real :as thal-real]
-            [uncomplicate.neanderthal.native :as thal-native]))
+            [uncomplicate.neanderthal.real :as thal-real]))
 
 (defn digits
   "Returns the digits of a number"
@@ -18,26 +17,25 @@
 
 (defn unit-vec
   [v]
-  (uncomplicate/with-release [alpha (thal/nrm2 v)
-                              result (thal/scal (/ alpha) v)]
+  (uncomplicate/let-release [alpha (thal/nrm2 v)
+                             result (thal/scal (/ alpha) v)]
     (seq result)))
 
 (defn cosine-sim
   [v1 v2]
-  (uncomplicate/with-release [v1 (unit-vec v1)
-                              v2 (unit-vec v2)
-                              result (thal/dot v1 v2)]
+  (uncomplicate/let-release [v1 (unit-vec v1)
+                             v2 (unit-vec v2)
+                             result (thal/dot v1 v2)]
     result))
 
 (defn unit-vec-sum
-  [& vectors]
+  [factory & vectors]
   (let [vectors (keep seq vectors)]
-
     (cond (not (seq vectors)) nil
-          (= 1 (count vectors)) (uncomplicate/with-release [v (thal-native/dv (first vectors))]
+          (= 1 (count vectors)) (uncomplicate/let-release [v (thal/vctr factory (first vectors))]
                                   (unit-vec v))
-          :else (uncomplicate/with-release [vectors (map thal-native/dv vectors)
-                                            v (apply thal/xpy vectors)]
+          :else (uncomplicate/let-release [vectors (map thal/vctr factory vectors)
+                                           v (apply thal/xpy vectors)]
                   (unit-vec v)))))
 
 
@@ -50,9 +48,9 @@
 
 (defn mdot
   [params s1 s2]
-  (uncomplicate/with-release [s1-mat (vectors->matrix params s1)
-                              s1-mat-trans (thal/trans s1-mat)
-                              s2-mat (vectors->matrix params s2)]
+  (uncomplicate/let-release [s1-mat (vectors->matrix params s1)
+                             s1-mat-trans (thal/trans s1-mat)
+                             s2-mat (vectors->matrix params s2)]
     #_(println (thal/mrows s1) (thal/ncols s1) (thal/mrows s2) (thal/ncols s2))
     (thal/mm s1-mat-trans s2-mat)))
 
@@ -62,27 +60,26 @@
        (map-indexed vector)
        (reduce
          (fn [{:keys [score] :as best} [j pattern]]
-           (uncomplicate/with-release [new-score (thal-real/entry score-mat i j)]
+           (uncomplicate/let-release [new-score (thal-real/entry score-mat i j)]
              (if (< score new-score)
-               {:match pattern :score (float score)}
+               {:match pattern :score (float new-score)}
                best)))
          init)))
 
 (defn find-best-match
   [{:keys [vector-fn] :as params} s1 s2]
-  (uncomplicate/with-release [score-mat (mdot params (map vector-fn s1) (map vector-fn s2))]
+  (uncomplicate/let-release [score-mat (mdot params (map vector-fn s1) (map vector-fn s2))]
     (->> s1
          (map-indexed vector)
          (reduce
            (fn [best [i sample]]
              (-> (best-in-row-from-matrix score-mat best i s2)
                  (assoc :sample sample)))
-           {:score 0})
-         (doall))))
+           {:score 0}))))
 
 (defn find-best-row-matches
   [{:keys [vector-fn] :as params} s1 s2]
-  (uncomplicate/with-release [score-mat (mdot params (map vector-fn s1) (map vector-fn s2))]
+  (uncomplicate/let-release [score-mat (mdot params (map vector-fn s1) (map vector-fn s2))]
     (->> s1
          (map-indexed (fn [i sample]
                         (-> score-mat

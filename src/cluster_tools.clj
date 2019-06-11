@@ -13,9 +13,9 @@
 (defn nearest-sample-cluster-pair
   [samples clusters {:keys [cluster-thresh] :as params}]
   (when (and (seq samples) (seq clusters))
-    (->> clusters
-         (math/find-best-match params samples)
-         (filter (fn [{:keys [score]}] (< cluster-thresh score))))))
+    (let [best (math/find-best-match params samples clusters)]
+      (when (< cluster-thresh (:score best))
+        best))))
 
 (defn single-pass-cluster
   "Occurs in O(N^2*M) time"
