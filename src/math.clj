@@ -34,7 +34,7 @@
     (cond (not (seq vectors)) nil
           (= 1 (count vectors)) (uncomplicate/let-release [v (thal/vctr factory (first vectors))]
                                   (unit-vec v))
-          :else (uncomplicate/let-release [vectors (map thal/vctr factory vectors)
+          :else (uncomplicate/let-release [vectors (map #(thal/vctr factory %) vectors)
                                            v (apply thal/xpy vectors)]
                   (unit-vec v)))))
 
@@ -47,45 +47,50 @@
          (thal/ge factory d (count vectors)))))
 
 (defn mdot
-  [params s1 s2]
-  (uncomplicate/let-release [s1-mat (vectors->matrix params s1)
-                             s1-mat-trans (thal/trans s1-mat)
-                             s2-mat (vectors->matrix params s2)]
-    #_(println (thal/mrows s1) (thal/ncols s1) (thal/mrows s2) (thal/ncols s2))
-    (thal/mm s1-mat-trans s2-mat)))
+  [{:keys [vector-fn] :as params} s1 s2]
+  (let [v1 (map vector-fn s1)
+        v2 (map vector-fn s2)]
+    (uncomplicate/let-release [s1-mat (vectors->matrix params v1)
+                               s1-mat-trans (thal/trans s1-mat)
+                               s2-mat (vectors->matrix params v2)]
+      #_(log/info #_(thal/mrows s1) #_(thal/ncols s1) #_(thal/mrows s2) #_(thal/ncols s2))
+      (thal/mm s1-mat-trans s2-mat))))
+
 
 (defn best-in-row-from-matrix
   [score-mat init i s]
   (->> s
        (map-indexed vector)
        (reduce
-         (fn [{:keys [score] :as best} [j pattern]]
+         (fn [{:keys [score] :as best} [j s]]
            (uncomplicate/let-release [new-score (thal-real/entry score-mat i j)]
              (if (< score new-score)
-               {:match pattern :score (float new-score)}
+               {:match s :score (float new-score)}
                best)))
          init)))
 
 (defn find-best-match
-  [{:keys [vector-fn] :as params} s1 s2]
-  (uncomplicate/let-release [score-mat (mdot params (map vector-fn s1) (map vector-fn s2))]
-    (->> s1
-         (map-indexed vector)
-         (reduce
-           (fn [best [i sample]]
-             (-> (best-in-row-from-matrix score-mat best i s2)
-                 (assoc :sample sample)))
-           {:score 0}))))
+  [params s1 s2]
+  (uncomplicate/let-release [score-mat (mdot params s1 s2)]
+    (when score-mat
+      (->> s1
+           (map-indexed vector)
+           (reduce
+             (fn [best [i sample]]
+               (-> (best-in-row-from-matrix score-mat best i s2)
+                   (assoc :sample sample)))
+             {:score 0})))))
 
 (defn find-best-row-matches
-  [{:keys [vector-fn] :as params} s1 s2]
-  (uncomplicate/let-release [score-mat (mdot params (map vector-fn s1) (map vector-fn s2))]
-    (->> s1
-         (map-indexed (fn [i sample]
-                        (-> score-mat
-                            (best-in-row-from-matrix {:score 0} i s2)
-                            (assoc :sample sample))))
-         (doall))))
+  [params s1 s2]
+  (uncomplicate/let-release [score-mat (mdot params s1 s2)]
+    (when score-mat
+      (->> s1
+           (map-indexed (fn [i sample]
+                          (-> score-mat
+                              (best-in-row-from-matrix {:score 0} i s2)
+                              (assoc :sample sample))))
+           (doall)))))
 
 (defn pred-false
   [& [{:keys [predicted-true all]}]]

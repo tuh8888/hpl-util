@@ -19,10 +19,15 @@
 
 (defn single-pass-cluster
   "Occurs in O(N^2*M) time"
-  [samples clusters {:keys [cluster-merge-fn] :as params}]
+  [{:keys [cluster-merge-fn] :as params} samples clusters]
   (loop [samples samples
          clusters clusters]
-    (let [best (nearest-sample-cluster-pair samples clusters params)]
-      (cond (:cluster best) (recur (disj samples (:sample best)) (update-cluster clusters (:cluster best) (:sample best) cluster-merge-fn))
-            (seq samples) (recur (set (rest samples)) (conj-cluster clusters (first samples) cluster-merge-fn))
+    (let [{:keys [sample match]} (nearest-sample-cluster-pair samples clusters params)]
+      (cond match (let [samples (disj samples sample)
+                        clusters (update-cluster clusters match sample cluster-merge-fn)]
+                    (recur samples clusters))
+            (seq samples) (let [sample (first samples)
+                                samples (disj samples sample)
+                                clusters (conj-cluster clusters sample cluster-merge-fn)]
+                            (recur samples clusters))
             :else clusters))))
