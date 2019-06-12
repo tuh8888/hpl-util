@@ -21,9 +21,7 @@
   [{:keys [factory]} vectors]
   (let [n (count (first vectors))
         m (count vectors)
-        vectors (->> vectors
-                     (map seq)
-                     (flatten))]
+        vectors (flatten vectors)]
     (thal/ge factory m n vectors {:layout :row})))
 
 (defn mdot
@@ -52,10 +50,11 @@
   (uncomplicate/with-release [score-mat (mdot params s1 s2)]
     (when score-mat
       (->> score-mat
-           (map-indexed (fn [i row]
-                          (-> row
-                              (find-best-match-in-row)
-                              (assoc :i i))))
+           (map-indexed vector)
+           (pmap (fn [[i row]]
+                   (-> row
+                       (find-best-match-in-row)
+                       (assoc :i i))))
            (doall)))))
 
 
