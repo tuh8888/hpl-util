@@ -1,4 +1,5 @@
-(ns cluster-tools)
+(ns cluster-tools
+  (:require [linear-algebra :as linear-algebra]))
 
 (defn update-cluster
   [clusters cluster sample merge-fn]
@@ -13,7 +14,7 @@
 (defn nearest-sample-cluster-pair
   [samples clusters {:keys [cluster-thresh] :as params}]
   (when (and (seq samples) (seq clusters))
-    (let [best (math/find-best-match params samples clusters)]
+    (let [best (linear-algebra/find-best-match params samples clusters)]
       (when (< cluster-thresh (:score best))
         best))))
 
