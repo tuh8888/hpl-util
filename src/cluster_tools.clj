@@ -17,9 +17,9 @@
   (conj clusters (merge-fn nil sample)))
 
 (defn nearest-sample-cluster-pair
-  [samples clusters {:keys [cluster-thresh] :as params}]
+  [clusters samples {:keys [cluster-thresh] :as params}]
   (when (and (seq samples) (seq clusters))
-    (let [best (linear-algebra/find-best-match params samples clusters)]
+    (let [best (linear-algebra/find-best-match params clusters samples)]
       (when (< cluster-thresh (:score best))
         best))))
 
@@ -28,7 +28,6 @@
   [{:keys [cluster-merge-fn vector-fn] :as params} samples clusters]
   (let [clusters (vec clusters)
         samples (vec samples)]
-
     (loop [samples (vec samples)
            sample-vectors (->> samples
                                (map vector-fn)
@@ -38,8 +37,7 @@
       (let [cluster-vectors (->> clusters
                                  (map vector-fn)
                                  (map #(linear-algebra/unit-vec params %)))
-            {:keys [i j]} (nearest-sample-cluster-pair sample-vectors cluster-vectors params)]
-
+            {:keys [i j]} (nearest-sample-cluster-pair cluster-vectors sample-vectors params)]
         (let [sample (get samples i)
               cluster (get clusters j)]
           (cond cluster (let [samples (vec-remove samples i)

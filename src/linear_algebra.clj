@@ -8,7 +8,7 @@
                               alpha-1 (thal/nrm2 v)
                               alpha (/ alpha-1)
                               result (thal/scal alpha v)]
-    (vec (seq result))))
+    (doall (vec (seq result)))))
 
 (defn vec-sum
   [& vectors]
@@ -17,29 +17,29 @@
       (->> vectors
            (apply map +)))))
 
-
 (defn vectors->matrix
   [{:keys [factory]} vectors]
-  (let [m (count (first vectors))
-        n (count vectors)]
-    (->> vectors
-         (map seq)
-         (flatten)
-         (thal/ge factory m n))))
+  (let [n (count (first vectors))
+        m (count vectors)
+        vectors (->> vectors
+                     (map seq)
+                     (flatten))]
+    (thal/ge factory m n vectors {:layout :row})))
 
 (defn mdot
   [params s1 s2]
   (uncomplicate/with-release [s1-mat (vectors->matrix params s1)
-                              s1-mat-trans (thal/trans s1-mat)
                               s2-mat (vectors->matrix params s2)
-                              result (thal/mm s1-mat-trans s2-mat)]
-    #_(log/info #_(thal/mrows s1) #_(thal/ncols s1) #_(thal/mrows s2) #_(thal/ncols s2))
-    (vec (doall (map vec result)))))
+                              s2-mat-trans (thal/trans s2-mat)]
+    #_(log/info (thal/mrows s1-mat) (thal/ncols s1-mat) (thal/mrows s2-mat) (thal/ncols s2-mat))
+    (uncomplicate/with-release [result (thal/mm s1-mat s2-mat-trans)]
+      #_(log/info (thal/mrows result) (thal/ncols result))
+      (vec (doall (map vec result))))))
 
 (defn find-best-match-in-row
   [row]
   (->> row
-       (map-indexed (fn [j score] {:score score :i j}))
+       (map-indexed (fn [j score] {:score score :j j}))
        (reduce (fn [best new]
                  (if (< (:score best) (:score new))
                    new
@@ -55,7 +55,7 @@
            (map-indexed (fn [i row]
                           (-> row
                               (find-best-match-in-row)
-                              (assoc :j i))))
+                              (assoc :i i))))
            (doall)))))
 
 
