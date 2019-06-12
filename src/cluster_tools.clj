@@ -7,14 +7,14 @@
   (vec (concat (subvec coll 0 pos) (subvec coll (inc pos)))))
 
 (defn update-cluster
-  [clusters cluster pos sample merge-fn]
+  [clusters cluster pos sample {:keys [cluster-merge-fn] :as params}]
   (let [clusters (vec-remove clusters pos)
-        cluster (merge-fn cluster sample)]
+        cluster (cluster-merge-fn cluster sample params)]
     (conj clusters cluster)))
 
 (defn conj-cluster
-  [clusters sample merge-fn]
-  (conj clusters (merge-fn nil sample)))
+  [clusters sample {:keys [cluster-merge-fn] :as params}]
+  (conj clusters (cluster-merge-fn nil sample params)))
 
 (defn nearest-sample-cluster-pair
   [clusters samples {:keys [cluster-thresh] :as params}]
@@ -25,7 +25,7 @@
 
 (defn single-pass-cluster
   "Occurs in O(N^2*M) time"
-  [{:keys [cluster-merge-fn vector-fn] :as params} samples clusters]
+  [{:keys [vector-fn] :as params} samples clusters]
   (let [clusters (vec clusters)
         samples (vec samples)]
     (loop [samples (vec samples)
@@ -42,11 +42,11 @@
               cluster (get clusters j)]
           (cond cluster (let [samples (vec-remove samples i)
                               sample-vectors (vec-remove sample-vectors i)
-                              clusters (update-cluster clusters cluster j sample cluster-merge-fn)]
+                              clusters (update-cluster clusters cluster j sample params)]
                           (recur samples sample-vectors clusters))
                 (seq samples) (let [sample (first samples)
                                     samples (vec-remove samples 0)
                                     sample-vectors (vec-remove sample-vectors 0)
-                                    clusters (conj-cluster clusters sample cluster-merge-fn)]
+                                    clusters (conj-cluster clusters sample params)]
                                 (recur samples sample-vectors clusters))
                 :else clusters))))))
