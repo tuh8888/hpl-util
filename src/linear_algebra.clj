@@ -38,33 +38,19 @@
   [row]
   (->> row
        (map-indexed (fn [j score] {:score score :j j}))
-       (reduce (fn [best new]
-                 (if (< (:score best) (:score new))
-                   new
-                   best))
-               {:score 0})))
-
+       (apply max-key :score {:score 0})))
 
 (defn find-best-row-matches
   [params s1 s2]
   (uncomplicate/with-release [score-mat (mdot params s1 s2)]
     (when score-mat
       (->> score-mat
-           (map-indexed vector)
-           (pmap (fn [[i row]]
-                   (-> row
-                       (find-best-match-in-row)
-                       (assoc :i i))))
+           (map-indexed (fn [[i row]] (assoc row :i i)))
+           (pmap find-best-match-in-row)
            (doall)))))
-
 
 (defn find-best-match
   [params s1 s2]
   (->> (find-best-row-matches params s1 s2)
-       (reduce (fn [best new]
-                 (if (< (:score best) (:score new))
-                   new
-                   best))
-               {:score 0})
+       (apply max-key :score {:score 0})
        (doall)))
-
