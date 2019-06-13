@@ -26,11 +26,11 @@
 
 (defn mdot
   [params s1 s2]
-  (uncomplicate/with-release [s1-mat (vectors->matrix params s1)
-                              s2-mat (vectors->matrix params s2)
-                              s2-mat-trans (thal/trans s2-mat)]
-    #_(log/info (thal/mrows s1-mat) (thal/ncols s1-mat) (thal/mrows s2-mat) (thal/ncols s2-mat))
-    (uncomplicate/with-release [result (thal/mm s1-mat s2-mat-trans)]
+  (uncomplicate/with-release [s2-mat (vectors->matrix params s2)
+                              s1-mat (vectors->matrix params s1)
+                              s1-mat-trans (thal/trans s1-mat)]
+    #_(log/info (thal/mrows s2-mat) (thal/ncols s2-mat) (thal/mrows s1-mat) (thal/ncols s1-mat))
+    (uncomplicate/with-release [result (thal/mm s2-mat s1-mat-trans)]
       #_(log/info (thal/mrows result) (thal/ncols result))
       (vec (doall (map vec result))))))
 

@@ -19,7 +19,7 @@
 (defn nearest-sample-cluster-pair
   [clusters samples {:keys [cluster-thresh] :as params}]
   (when (and (seq samples) (seq clusters))
-    (let [best (linear-algebra/find-best-match params clusters samples)]
+    (let [best (linear-algebra/find-best-match params samples clusters)]
       (when (< cluster-thresh (:score best))
         best))))
 
