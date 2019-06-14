@@ -13,28 +13,28 @@
 (declare mult-persistence)
 
 (defn pred-false
-  [& [{:keys [predicted-true all]}]]
-  (clojure.set/difference all predicted-true))
+  [& [{:keys [predicted-positive all]}]]
+  (clojure.set/difference all predicted-positive))
 
 (defn actual-false
-  [& [{:keys [actual-true all]}]]
-  (clojure.set/difference all actual-true))
+  [& [{:keys [actual-positive all]}]]
+  (clojure.set/difference all actual-positive))
 
 (defn true-pos
-  [& [{:keys [predicted-true actual-true]}]]
-  (clojure.set/intersection predicted-true actual-true))
+  [& [{:keys [predicted-positive actual-positive]}]]
+  (clojure.set/intersection predicted-positive actual-positive))
 (defn true-neg
   [& [params]]
   (clojure.set/intersection (pred-false params)
                             (actual-false params)))
 (defn false-pos
-  [& [{:keys [predicted-true] :as params}]]
-  (clojure.set/intersection predicted-true
+  [& [{:keys [predicted-positive] :as params}]]
+  (clojure.set/intersection predicted-positive
                             (actual-false params)))
 (defn false-neg
-  [& [{:keys [actual-true] :as params}]]
+  [& [{:keys [actual-positive] :as params}]]
   (clojure.set/intersection (pred-false params)
-                            actual-true))
+                            actual-positive))
 
 (defn precision
   [& [params]]
