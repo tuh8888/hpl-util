@@ -7,7 +7,7 @@
 
 (defn deterministic-shuffle
   [seed ^Collection coll]
-  (let [al (ArrayList. coll)
+  (let [al  (ArrayList. coll)
         rng (Random. seed)]
     (Collections/shuffle al rng)
     (RT/vector (.toArray al))))
@@ -48,11 +48,11 @@
 
 (defn recursively
   [fn arg]
-  (loop [results (fn arg)
-         others (set results)
+  (loop [results   (fn arg)
+         others    (set results)
          completed #{}]
     (let [completed (cset/union completed results)
-          others (cset/difference others results)]
+          others    (cset/difference others results)]
       (if (empty? others)
         completed
         (recur (fn (first others)) (rest others) completed)))))
@@ -60,7 +60,7 @@
 (defn pdoseq-partitioned
   [f m partition-size]
   (let [partitioned-m (partition-all partition-size m)
-        num-parts (count partitioned-m)]
+        num-parts     (count partitioned-m)]
     (cp/pdoseq (inc (cp/ncpus))
       [[i part] (map-indexed vector partitioned-m)]
       (log/info "Partition:" i "/" num-parts)
