@@ -45,8 +45,12 @@
   (uncomplicate/with-release [score-mat (mdot params s1 s2)]
     (when score-mat
       (->> score-mat
-           (map-indexed (fn [[i row]] (assoc row :i i)))
-           (pmap find-best-match-in-row)
+           (map-indexed vector)
+           (pmap (fn [[i row]]
+                   (-> row
+                       (find-best-match-in-row)
+                       (assoc :i i))))
+
            (doall)))))
 
 (defn find-best-match
