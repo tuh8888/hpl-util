@@ -9,7 +9,7 @@
 (defn update-cluster
   [{:keys [cluster-merge-fn] :as params} clusters cluster pos sample]
   (let [clusters (vec-remove clusters pos)
-        cluster (cluster-merge-fn params cluster sample)]
+        cluster  (cluster-merge-fn params cluster sample)]
     (conj clusters cluster)))
 
 (defn conj-cluster
@@ -27,26 +27,26 @@
   "Occurs in O(N^2*M) time"
   [{:keys [vector-fn] :as params} samples clusters]
   (let [clusters (vec clusters)
-        samples (vec samples)]
-    (loop [samples (vec samples)
+        samples  (vec samples)]
+    (loop [samples        (vec samples)
            sample-vectors (->> samples
                                (map vector-fn)
                                (pmap #(linear-algebra/unit-vec params %))
                                (vec))
-           clusters (vec clusters)]
+           clusters       (vec clusters)]
       (let [cluster-vectors (->> clusters
                                  (map vector-fn)
                                  (pmap #(linear-algebra/unit-vec params %)))
             {:keys [i j]} (nearest-sample-cluster-pair params cluster-vectors sample-vectors)]
-        (let [sample (get samples i)
+        (let [sample  (get samples i)
               cluster (get clusters j)]
-          (cond cluster (let [samples (vec-remove samples i)
+          (cond cluster (let [samples        (vec-remove samples i)
                               sample-vectors (vec-remove sample-vectors i)
-                              clusters (update-cluster params clusters cluster j sample)]
+                              clusters       (update-cluster params clusters cluster j sample)]
                           (recur samples sample-vectors clusters))
-                (seq samples) (let [sample (first samples)
-                                    samples (vec-remove samples 0)
+                (seq samples) (let [sample         (first samples)
+                                    samples        (vec-remove samples 0)
                                     sample-vectors (vec-remove sample-vectors 0)
-                                    clusters (conj-cluster params clusters sample)]
+                                    clusters       (conj-cluster params clusters sample)]
                                 (recur samples sample-vectors clusters))
                 :else clusters))))))
