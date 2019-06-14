@@ -32,12 +32,12 @@
     (loop [samples        (vec samples)
            sample-vectors (->> samples
                                (map vector-fn)
-                               (pmap #(linear-algebra/unit-vec factory %))
+                               #_(pmap #(linear-algebra/unit-vec factory %))
                                (vec))
            clusters       (vec clusters)]
       (let [cluster-vectors (->> clusters
                                  (map vector-fn)
-                                 (pmap #(linear-algebra/unit-vec factory %)))
+                                 #_(pmap #(linear-algebra/unit-vec factory %)))
             {:keys [i j]} (nearest-sample-cluster-pair params cluster-vectors sample-vectors)]
         (let [sample  (get samples i)
               cluster (get clusters j)]
