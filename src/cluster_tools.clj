@@ -1,61 +1,48 @@
 (ns cluster-tools
   (:require [linear-algebra :as linear-algebra]
             [taoensso.timbre :as log]
+            [util :as util]
             [uncomplicate.commons.core :as uncomplicate]))
 
-(defn update-cluster
-  [{:keys [cluster-merge-fn] :as params} clusters cluster sample]
-  (let [clusters    (disj clusters cluster)
-        new-cluster (cluster-merge-fn params cluster sample)]
-    [new-cluster (conj clusters new-cluster)]))
-
-(defn conj-cluster
-  [{:keys [cluster-merge-fn] :as params} clusters sample]
-  (let [new-cluster (cluster-merge-fn params nil sample)]
-    [new-cluster (conj clusters new-cluster)]))
-
 (defn sample-cluster-scores
-  [cluster score-row samples]
-  (pmap (fn [score sample]
-          (when-not score (log/warn "No score found"))
-          {:sample sample :score score :cluster cluster})
-        score-row samples))
+  [j col cluster-thresh]
+  (->> col
+       (map-indexed (fn [i score] {:i i :score score :j j}))
+       (filter #(< cluster-thresh (:score %)))))
 
 (defn update-score-cache
-  [{:keys [factory vector-fn]} clusters samples score-cache]
-  (if (seq clusters)
-    (let [clusters (vec clusters)
-          samples  (vec samples)]
-      (uncomplicate/with-release [score-mat (linear-algebra/mdot factory
-                                                                 (mapv vector-fn samples)
-                                                                 (mapv vector-fn clusters))]
-        (->> clusters
-             (mapcat (fn [score-row cluster]
-                       (sample-cluster-scores cluster score-row samples))
-                     score-mat)
-             (into score-cache))))
+  [{:keys [factory cluster-thresh]} sample-vectors cluster-vectors score-cache offset]
+  (if (seq cluster-vectors)
+    (uncomplicate/with-release [score-mat (linear-algebra/mdot factory sample-vectors cluster-vectors)]
+      (->> score-mat
+           (map-indexed (fn [j col] (sample-cluster-scores (+ j offset) col cluster-thresh)))
+           (apply concat score-cache)))
     score-cache))
-
-(defn nearest-sample-cluster-pair
-  [{:keys [cluster-thresh]} samples score-cache]
-  (let [init {:score cluster-thresh :sample (first samples)}]
-    (apply max-key :score init score-cache)))
 
 (defn single-pass-cluster
   "Occurs in O(N^2*M) time"
-  [{:keys [cluster-merge-fn] :as params} samples clusters]
-  (loop [samples      (set samples)
-         clusters     (set clusters)
-         score-cache  nil
-         new-clusters clusters]
+  [{:keys [cluster-merge-fn cluster-thresh vector-fn] :as params} samples clusters]
+  (loop [samples         (vec samples)
+         sample-vectors  (mapv vector-fn samples)
+         clusters        (vec clusters)
+         cluster-vectors (mapv vector-fn clusters)
+         score-cache     nil
+         offset          (if (seq clusters) 0 -1)]
     (if (seq samples)
-      (let [score-cache (update-score-cache params new-clusters samples score-cache)
-            {:keys [cluster sample]} (nearest-sample-cluster-pair params samples score-cache)
-            samples     (disj samples sample)
-            score-cache (remove #(= (:cluster %) cluster) score-cache)
-            new-cluster (cluster-merge-fn params cluster sample)
-            clusters    (-> clusters
-                            (disj clusters cluster)
-                            (conj new-cluster))]
-        (recur samples clusters score-cache [new-cluster]))
+      (let [score-cache    (update-score-cache params sample-vectors cluster-vectors score-cache offset)
+            {:keys [i j]} (apply max-key :score {:score cluster-thresh :i 0} score-cache)
+            sample         (get samples i)
+            cluster        (get clusters j)
+            samples        (if i (util/vec-remove samples i) samples)
+            sample-vectors (if i (util/vec-remove sample-vectors i) sample-vectors)
+            clusters       (if j (util/vec-remove clusters j) clusters)
+            score-cache    (->> score-cache
+                                (remove #(= (:i %) i))
+                                (remove #(= (:j %) j))
+                                (map #(update % :i (fn [s] (if (< i s) (dec s) s))))
+                                (map #(update % :j (fn [c] (if (and j (< j c)) (dec c) c)))))
+            new-cluster    (cluster-merge-fn params cluster sample)
+            offset         (if j offset (inc offset))
+            clusters       (conj clusters new-cluster)]
+        (recur samples sample-vectors clusters [(vector-fn new-cluster)] score-cache offset))
       clusters)))
