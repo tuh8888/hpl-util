@@ -22,6 +22,7 @@
 (defn single-pass-cluster
   "Occurs in O(N^2*M) time"
   [{:keys [cluster-merge-fn cluster-thresh vector-fn] :as params} samples clusters]
+  (log/info (count samples) (count clusters))
   (loop [samples         (vec samples)
          sample-vectors  (mapv vector-fn samples)
          clusters        (vec clusters)
