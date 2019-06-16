@@ -5,6 +5,11 @@
   (:import (clojure.lang IDeref IBlockingDeref IFn IPending RT)
            (java.util Collection ArrayList Random Collections)))
 
+(defn vec-remove
+  "remove elem in coll"
+  [coll pos]
+  (vec (concat (subvec coll 0 pos) (subvec coll (inc pos)))))
+
 (defn deterministic-shuffle
   [seed ^Collection coll]
   (let [al  (ArrayList. coll)
