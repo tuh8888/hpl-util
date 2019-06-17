@@ -1,7 +1,6 @@
 (ns linear-algebra
   (:require [uncomplicate.commons.core :as uncomplicate]
-            [uncomplicate.neanderthal.core :as thal]
-            [taoensso.timbre :as log]))
+            [uncomplicate.neanderthal.core :as thal]))
 
 (defn unit-vec
   [factory v]
@@ -34,29 +33,3 @@
     (uncomplicate/with-release [result (thal/mm s1-mat s2-mat-trans)]
       #_(log/info (thal/mrows result) (thal/ncols result))
       (vec (doall (map vec result))))))
-
-(defn find-best-match-in-col
-  [col]
-  (->> col
-       (map-indexed (fn [i score] {:score score :i i}))
-       (apply max-key :score {:score 0})))
-
-(defn find-best-col-matches
-  [factory s1 s2]
-  (uncomplicate/with-release [score-mat (mdot factory s1 s2)]
-    #_(log/info (count score-mat) (count (first score-mat)))
-    (when score-mat
-      (->> score-mat
-           (map-indexed vector)
-           (pmap (fn [[j col]]
-                   (-> col
-                       (find-best-match-in-col)
-                       (assoc :j j))))
-
-           (doall)))))
-
-(defn find-best-match
-  [factory s1 s2]
-  (->> (find-best-col-matches factory s1 s2)
-       (apply max-key :score {:score 0})
-       (doall)))

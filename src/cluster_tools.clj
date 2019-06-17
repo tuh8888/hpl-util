@@ -1,6 +1,5 @@
 (ns cluster-tools
   (:require [linear-algebra :as linear-algebra]
-            [taoensso.timbre :as log]
             [util :as util]
             [uncomplicate.commons.core :as uncomplicate]))
 
@@ -17,7 +16,6 @@
 (defn single-pass-cluster
   "Occurs in O(N^2*M) time"
   [{:keys [cluster-merge-fn cluster-thresh vector-fn] :as params} samples clusters]
-  (log/info (count samples) (count clusters))
   (loop [samples         (vec samples)
          sample-vectors  (mapv vector-fn samples)
          clusters        (vec clusters)
