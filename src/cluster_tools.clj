@@ -4,18 +4,13 @@
             [util :as util]
             [uncomplicate.commons.core :as uncomplicate]))
 
-(defn sample-cluster-scores
-  [j col cluster-thresh]
-  (->> col
-       (map-indexed (fn [i score] {:i i :score score :j j}))
-       (filter #(< cluster-thresh (:score %)))))
 
 (defn update-score-cache
-  [{:keys [factory cluster-thresh]} sample-vectors cluster-vectors score-cache offset]
+  [{:keys [factory]} sample-vectors cluster-vectors score-cache offset]
   (if (seq cluster-vectors)
     (uncomplicate/with-release [score-mat (linear-algebra/mdot factory sample-vectors cluster-vectors)]
       (->> score-mat
-           (map-indexed (fn [j col] (sample-cluster-scores (+ j offset) col cluster-thresh)))
+           (map-indexed (fn [j col] (map-indexed (fn [i score] {:i i :score score :j (+ j offset)}) col)))
            (apply concat score-cache)))
     score-cache))
 
@@ -31,6 +26,7 @@
          offset          (if (seq clusters) 0 -1)]
     (if (seq samples)
       (let [score-cache    (update-score-cache params sample-vectors cluster-vectors score-cache offset)
+            score-cache    (filter #(< cluster-thresh (:score %)) score-cache)
             {:keys [i j]} (apply max-key :score {:score cluster-thresh :i 0} score-cache)
             sample         (get samples i)
             cluster        (get clusters j)
