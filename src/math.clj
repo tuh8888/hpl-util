@@ -54,8 +54,7 @@
         r (recall params)]
     (when-not (or (nil? p) (nil? r))
       (let [den (+ p r)]
-        (if (= den 0)
-          nil
+        (when-not (= den 0.0)
           (float (/ (* 2 p r)
                     den)))))))
 
