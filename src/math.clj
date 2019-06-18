@@ -38,14 +38,26 @@
 
 (defn precision
   [& [params]]
-  (float (/ (count (true-pos params)) (+ (count (true-pos params)) (count (false-pos params))))))
+  (let [den (+ (count (true-pos params)) (count (false-pos params)))]
+    (when-not (= 0 den)
+      (float (/ (count (true-pos params))
+                den)))))
 (defn recall
   [& [params]]
-  (float (/ (count (true-pos params)) (+ (count (true-pos params)) (count (false-neg params))))))
+  (let [den (+ (count (true-pos params)) (count (false-neg params)))]
+    (when-not (= 0 den)
+      (float (/ (count (true-pos params))
+                den)))))
 (defn f1
   [& [params]]
-  (float (/ (* 2 (precision params) (recall params))
-            (+ (precision params) (recall params)))))
+  (let [p (precision params)
+        r (recall params)]
+    (when-not (or (nil? p) (nil? r))
+      (let [den (+ p r)]
+        (if (= den 0)
+          nil
+          (float (/ (* 2 p r)
+                    den)))))))
 
 (defn calc-metrics
   [& [params]]
@@ -83,9 +95,9 @@
   the most times. Current record holder is 277777788888899 with 11 iterations."
   [num-digits]
 
-  (let [best (atom {:num     (list)
-                    :steps   0
-                    :longest 0})
+  (let [best         (atom {:num     (list)
+                            :steps   0
+                            :longest 0})
         digit-params (combo/cartesian-product
                        [true false]
                        [true false]
