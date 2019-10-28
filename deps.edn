@@ -4,7 +4,8 @@
          ubergraph                      {:mvn/version "0.5.2"}
          com.taoensso/timbre            {:mvn/version "4.10.0"}
          com.climate/claypoole          {:mvn/version "1.1.4"}
-         com.taoensso/nippy             {:mvn/version "2.14.0"}}
+         com.taoensso/nippy             {:mvn/version "2.14.0"}
+         re-frame                       {:mvn/version "0.10.6"}}
  :paths ["src" "resources"]
  :aliases
         {:rebl {:extra-deps {org.clojure/clojure         {:mvn/version "1.10.0"}
