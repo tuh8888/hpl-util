@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/hpl-util.iml" filepath="$PROJECT_DIR$/.idea/modules/hpl-util.iml" />
+      <module fileurl="file://$PROJECT_DIR$/hpl-util.iml" filepath="$PROJECT_DIR$/hpl-util.iml" />
     </modules>
   </component>
 </project>
