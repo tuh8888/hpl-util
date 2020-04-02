@@ -1,4 +1,4 @@
-(ns graph)
+(ns hpl.graph)
 
 (defn undirected-graph
   [g]

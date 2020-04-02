@@ -1,4 +1,4 @@
-(ns core
+(ns hpl.core
   (:gen-class))
 
 (defn -main [& args]

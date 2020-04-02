@@ -1,4 +1,4 @@
-(ns script
+(ns hpl.script
   (:require [clojure.spec.alpha :as spec]
             [clojure.spec.test.alpha :as test]
             [clojure.string :as str]

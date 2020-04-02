@@ -1,4 +1,4 @@
-(ns linear-algebra
+(ns hpl.linear-algebra
   (:require [uncomplicate.commons.core :as uncomplicate]
             [uncomplicate.neanderthal.core :as thal]))
 

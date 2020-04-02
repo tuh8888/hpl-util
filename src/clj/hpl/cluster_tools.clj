@@ -1,4 +1,4 @@
-(ns cluster-tools
+(ns hpl.cluster-tools
   (:require [linear-algebra :as linear-algebra]
             [util :as util]
             [uncomplicate.commons.core :as uncomplicate]))

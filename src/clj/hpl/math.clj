@@ -1,4 +1,4 @@
-(ns math
+(ns hpl.math
   (:require [taoensso.timbre :as log]
             [clojure.math.combinatorics :as combo]))
 
