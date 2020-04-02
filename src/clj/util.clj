@@ -20,12 +20,18 @@
 (defn map-kv
   [f m]
   (zipmap (keys m)
-          (map f (vals m))))
+    (map f (vals m))))
+
+(defn map-vals
+  [f m]
+  (->> m
+    (map (juxt key (comp f val)))
+    (into {})))
 
 (defn pmap-kv
   [f m]
   (zipmap (keys m)
-          (pmap f (vals m))))
+    (pmap f (vals m))))
 
 (defn parse-int
   [x]
@@ -46,7 +52,7 @@
 (defn lowercase?
   [^Character char]
   (or (not (Character/isLetter char))
-      (Character/isLowerCase char)))
+    (Character/isLowerCase char)))
 (defn all-lowercase
   [^String string]
   (and (every? lowercase? string) string))
@@ -73,7 +79,7 @@
 
 (defn promise? [v]
   (every? #(instance? % v)
-          [IPending
-           IFn
-           IBlockingDeref
-           IDeref]))
+    [IPending
+     IFn
+     IBlockingDeref
+     IDeref]))
